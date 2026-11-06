@@ -1,4 +1,3 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Shop Boss</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -3536,9 +3535,9 @@ const UPG = [
 ];
 const COLORS = [{ id: '#62c9f5', n: 'Sky Blue', p: 0 }, { id: '#2f80ed', n: 'Ocean', p: 300 }, { id: '#4dd0e1', n: 'Ice', p: 400 }, { id: '#9c7cf4', n: 'Galaxy', p: 600 }, { id: '#ff8ac2', n: 'Bubblegum', p: 600 }, { id: '#ff7a59', n: 'Lava', p: 900 }, { id: '#7ed957', n: 'Lime', p: 900 }, { id: '#ffc83d', n: 'Gold', p: 3000 }];
 const HATS = [{ id: 'none', n: 'No hat', p: 0 }, { id: 'cap:#e53935', n: 'Red Cap', p: 250 }, { id: 'straw', n: 'Straw Hat', p: 350 }, { id: 'beanie:#3f51b5', n: 'Beanie', p: 400 }, { id: 'helmet', n: 'Hard Hat', p: 500 }, { id: 'bow', n: 'Bow', p: 500 }, { id: 'pirate', n: 'Pirate Hat', p: 800 }, { id: 'witch', n: 'Wizard Hat', p: 1000 }, { id: 'space', n: 'Space Helmet', p: 1500 }, { id: 'crown', n: 'Crown', p: 5000 }];
-const UPG_GROWTH = 2.05;
-const STOCK_COST = [50, 120, 250, 450, 750, 1100, 1600, 2200];
-const CASH_COST = { kassa1: 100, kassa2: 250 };
+const UPG_GROWTH = 2.3;
+const STOCK_COST = [40, 900, 2500, 5000, 9000, 15000, 24000, 36000];
+const CASH_COST = { kassa1: 80, kassa2: 2000 };
 
 /* ================= save ================= */
 const SKEY = 'winkelbaas-v1';
@@ -4370,7 +4369,7 @@ class Customer extends Actor {
 }
 function shiftQueue(co) { co.queue.forEach((c, i) => { c.qi = i; const q = co.qpos(i); if (c.state === 'queue') c.goDirect(q.x, q.z); else if (c.state === 'toQueue') c.goTo(q.x, q.z); }); }
 function payCustomer(co, c) {
-  let total = 0; for (const it of c.list) total += it.g * priceOf(it.p); total = Math.max(1, Math.round(total * priceMul()));
+  let total = 0; for (const it of c.list) total += it.g * priceOf(it.p); total = Math.max(1, Math.round(total * priceMul() * 0.8));
   co.pile.v += total;
   const n = clamp(Math.ceil(c.carry.m.length / 2), 1, 4);
   for (let i = 0; i < n; i++) { if (co.pile.m.length >= 40) break; const m = billMesh(); m.position.set(c.pos.x, 1.2, c.pos.z); worldRoot.add(m); const k = co.pile.m.length; co.pile.m.push(m); const s = co.pileSlot(k); fly(m, co.group, V3(s[0], s[1], s[2]), { dur: 0.36, arc: 1.2, delay: i * 0.07, spin: rand(-12, 12), done: () => bump(co.group, 0.02) }); }
@@ -4798,5 +4797,3 @@ const hot = window.claude?.hot;
 if (hot && hot.ready) hot.ready(start); else start(hot?.data ?? {});
 requestAnimationFrame(frame);
 </script>
-
-</body></html>
