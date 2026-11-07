@@ -4095,13 +4095,13 @@ const EVENTS = [
   { k: 'grow', n: 'Super harvest', msg: 'Super harvest! Plants grow super fast!', d: 20, ic: 'sprout' },
   { k: 'mach', n: 'Machine power', msg: 'Machine power! Machines work twice as fast!', d: 20, ic: 'cog' },
 ];
-const EV = { cur: null, t: 0, next: 75 };
+const EV = { cur: null, t: 0, next: 200 };
 const evOn = k => EV.cur && EV.cur.k === k;
 function updEvents(dt) {
   if (!inGame || menuOpen || traveling || ws.tut < TUT.length) return;
   let chip = document.getElementById('evChip');
   if (!chip) { chip = document.createElement('div'); chip.id = 'evChip'; chip.style.cssText = 'position:fixed;left:12px;top:calc(env(safe-area-inset-top,0px) + 92px);z-index:2;background:#ff9f1c;color:#fff;font:800 14px var(--font);padding:4px 12px;border-radius:12px;box-shadow:0 3px 0 rgba(0,0,0,.18);pointer-events:none'; chip.hidden = true; document.body.appendChild(chip); }
-  if (EV.cur) { EV.t -= dt; const txt = EV.cur.n + ' ' + Math.ceil(EV.t) + 's'; if (chip.dataset.v !== txt) { chip.dataset.v = txt; chip.textContent = txt; } chip.hidden = false; if (EV.t <= 0) { EV.cur = null; chip.hidden = true; EV.next = 70 + Math.random() * 60; } return; }
+  if (EV.cur) { EV.t -= dt; const txt = EV.cur.n + ' ' + Math.ceil(EV.t) + 's'; if (chip.dataset.v !== txt) { chip.dataset.v = txt; chip.textContent = txt; } chip.hidden = false; if (EV.t <= 0) { EV.cur = null; chip.hidden = true; EV.next = 200 + Math.random() * 200; } return; }
   EV.next -= dt; if (EV.next > 0) return;
   EV.cur = EVENTS[Math.floor(Math.random() * EVENTS.length)]; EV.t = EV.cur.d; toast(EV.cur.msg, EV.cur.ic); try { SFX.hire(); } catch (_) { }
 }
@@ -4746,7 +4746,7 @@ function schedMusic() { const a = AC; if (!a || !save.set.music) return; const s
 function startMusic() { if (musT || !save || !save.set || !save.set.music || document.hidden) return; const a = ac(); if (!a) return; if (!musGain) { musGain = a.createGain(); musGain.gain.value = 0.55; musGain.connect(a.destination); } musNext = a.currentTime + 0.15; musT = setInterval(schedMusic, 90); }
 function stopMusic() { if (musT) { clearInterval(musT); musT = null; } }
 function applyGfx() { const g = save.set.gfx; RES.ceil = 1; RES.hold = 3; RES.scale = g === 'ultra' && !DESKTOP ? Math.min(1, 2 / Math.max(1, Math.min(window.devicePixelRatio || 1, 3))) : 1; sun.castShadow = g !== 'low'; const sz = g === 'ultra' ? (DESKTOP && renderer.capabilities.maxTextureSize >= 8192 ? 4096 : 2048) : g === 'high' ? 2048 : 1024; if (sun.shadow.mapSize.x !== sz) { sun.shadow.mapSize.set(sz, sz); if (sun.shadow.map) { sun.shadow.map.dispose(); sun.shadow.map = null; } } resize(); }
-function initSave() { save.set = Object.assign({ music: true, vib: true, gfx: 'ultra', zoom: 'normal', bubbles: true, lang: /^nl/i.test(navigator.language || '') ? 'nl' : 'en' }, save.set || {}); applyLang(); if (!save.set.g4k) { save.set.g4k = 1; if (save.set.gfx === 'high') save.set.gfx = 'ultra'; } try { if (localStorage.getItem('winkelbaas-safe')) { localStorage.removeItem('winkelbaas-safe'); save.set.gfx = { ultra: 'high', high: 'medium' }[save.set.gfx] || 'low'; } } catch (_) { } save.owned = save.owned || { 'c|#62c9f5': 1, 'h|none': 1 }; save.look = save.look || { c: '#62c9f5', h: 'none' }; if (save.sound === undefined) save.sound = true; }
+function initSave() { save.set = Object.assign({ music: true, vib: true, gfx: 'ultra', zoom: 'normal', bubbles: true, lang: 'en' }, save.set || {}); applyLang(); if (!save.set.g4k) { save.set.g4k = 1; if (save.set.gfx === 'high') save.set.gfx = 'ultra'; } try { if (localStorage.getItem('winkelbaas-safe')) { localStorage.removeItem('winkelbaas-safe'); save.set.gfx = { ultra: 'high', high: 'medium' }[save.set.gfx] || 'low'; } } catch (_) { } save.owned = save.owned || { 'c|#62c9f5': 1, 'h|none': 1 }; save.look = save.look || { c: '#62c9f5', h: 'none' }; if (save.sound === undefined) save.sound = true; }
 function lookIcon(kind, id) { const key = kind + '_' + id; if (!ICON[key]) { if (kind === 'c') renderIcon(key, figure(id, 'none').root, [0.35, 0.25, 1], 0.9); else if (id === 'none') renderIcon(key, figure(save.look.c, 'none').root, [0.35, 0.25, 1], 0.9); else { const g = new THREE.Group(); addHat(g, id); renderIcon(key, g, [0.4, 0.5, 1], 0.95); } } return key; }
 function refreshPlayerIcon() { renderIcon('player', figure(save.look.c, save.look.h).root, [0.35, 0.25, 1], 0.9); $('#mSkins img').src = ICON.player.url; }
 function applyLook() { if (player) { player.body.material = charMat(save.look.c); for (const m of player.hatMeshes) m.removeFromParent(); player.hatMeshes = addHat(player.head, save.look.h); sparkle(player.pos.x, 1.5, player.pos.z, 12); player.hop = 0.42; } refreshPlayerIcon(); }
