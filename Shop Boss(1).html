@@ -4200,7 +4200,7 @@ function buildSpot(def) {
   const base = new THREE.Mesh(SPOT_GEO, new THREE.MeshBasicMaterial({ map: bracketTex(), transparent: true, depthWrite: false })); base.rotation.x = -PI / 2; base.position.y = 0.03; g.add(base);
   const fill = new THREE.Mesh(FILL_GEO, new THREE.MeshBasicMaterial({ color: 0x3ddc84, transparent: true, opacity: 0.8, depthWrite: false })); fill.rotation.x = -PI / 2; fill.position.y = 0.025; g.add(fill);
   const icn = sprite(badgeTex(defIcon(def)), 0.85); icn.position.y = 1.0; g.add(icn);
-  const cost = Math.round(def.c);
+  const cost = Math.round(def.c * diffCost());
   const sp = { def, x, z, g, base, fill, ic: icn, cost, paid: Math.min(ws.paid[def.id] || 0, cost - 1), acc: 0, bt: 0 };
   sp.L = addLabel('ul', `<div class="nm">${defName(def)}</div><div class="pr">${ic('cash')}<span></span></div>`); sp.L.span = sp.L.el.querySelector('span'); sp.L.wp.set(x, 1.6, z); updSpotLabel(sp);
   spots.push(sp); tweenScale(g, 0.6, 0.01, 1, elasticOut);
@@ -4387,7 +4387,7 @@ class Customer extends Actor {
 }
 function shiftQueue(co) { co.queue.forEach((c, i) => { c.qi = i; const q = co.qpos(i); if (c.state === 'queue') c.goDirect(q.x, q.z); else if (c.state === 'toQueue') c.goTo(q.x, q.z); }); }
 function payCustomer(co, c) {
-  let total = 0; for (const it of c.list) total += it.g * priceOf(it.p); total = Math.max(1, Math.round(total * priceMul() * 0.8));
+  let total = 0; for (const it of c.list) total += it.g * priceOf(it.p); total = Math.max(1, Math.round(total * priceMul() * 0.8 * diffPay()));
   co.pile.v += total;
   const n = clamp(Math.ceil(c.carry.m.length / 2), 1, 4);
   for (let i = 0; i < n; i++) { if (co.pile.m.length >= 40) break; const m = billMesh(); m.position.set(c.pos.x, 1.2, c.pos.z); worldRoot.add(m); const k = co.pile.m.length; co.pile.m.push(m); const s = co.pileSlot(k); fly(m, co.group, V3(s[0], s[1], s[2]), { dur: 0.36, arc: 1.2, delay: i * 0.07, spin: rand(-12, 12), done: () => bump(co.group, 0.02) }); }
@@ -4644,8 +4644,9 @@ function updHud(dt) {
   const t = fmt(dispMoney); if (t !== lastMoneyTxt) { $('#moneyVal').textContent = t; lastMoneyTxt = t; }
   if (toastT > 0) { toastT -= dt; if (toastT <= 0) $('#toast').hidden = true; }
 }
-const upgCost = (base, l) => Math.round(base * W.mul * Math.pow(UPG_GROWTH, l));
-const stockCost = () => Math.round(STOCK_COST[ws.stock] * W.mul);
+const diffPay = () => Math.max(0.6, 1 - (WI || 0) * 0.06), diffCost = () => 1 + (WI || 0) * 0.15;
+const upgCost = (base, l) => Math.round(base * W.mul * diffCost() * Math.pow(UPG_GROWTH, l));
+const stockCost = () => Math.round(STOCK_COST[ws.stock] * W.mul * diffCost());
 const buyBtn = (act, price, arg = '') => `<button type="button" class="buy" data-act="${act}" data-arg="${arg}" data-price="${price}" ${ws.money >= price ? '' : 'disabled'}>${ic('cash')}${fmt(price)}</button>`;
 const lockBtn = () => `<button type="button" class="buy" disabled>${ic('lock')}</button>`;
 const okBtn = t => `<button type="button" class="buy ok" disabled>${t}</button>`;
@@ -4669,7 +4670,7 @@ function renderPanel() {
     $('#pTitle').textContent = 'Staff';
     h += `<p class="note">Staff keep working, even when you are somewhere else.</p><div class="sec">Hire</div>`;
     for (const id of ['kassa1', 'kassa2']) {
-      const co = checkouts.find(c => c.id === id), nr = id === 'kassa1' ? 1 : 2, pr = Math.round(CASH_COST[id] * W.mul);
+      const co = checkouts.find(c => c.id === id), nr = id === 'kassa1' ? 1 : 2, pr = Math.round(CASH_COST[id] * W.mul * diffCost());
       h += row('register', `Cashier ${nr}`, co ? 'Serves customers at register ' + nr : 'Buy register ' + nr + ' first', !co ? lockBtn() : ws.cash[id] ? okBtn('Hired ✓') : buyBtn('cash', pr, id));
     }
     const full = ws.stock >= STOCK_COST.length;
@@ -4716,7 +4717,7 @@ $('#pBody').addEventListener('click', e => {
   const btn = e.target.closest('button[data-act]'); if (!btn || btn.disabled) return;
   const a = btn.dataset.act, arg = btn.dataset.arg;
   if (a === 'stock') { const pr = stockCost(); if (ws.money < pr) return; ws.money -= pr; ws.stock++; hireStocker(); SFX.hire(); toast('New stocker hired!', 'worker'); }
-  else if (a === 'cash') { const pr = Math.round(CASH_COST[arg] * W.mul), co = checkouts.find(c => c.id === arg); if (!co || ws.money < pr) return; ws.money -= pr; ws.cash[arg] = 1; hireCashier(co); SFX.hire(); toast('Cashier hired!', 'register'); }
+  else if (a === 'cash') { const pr = Math.round(CASH_COST[arg] * W.mul * diffCost()), co = checkouts.find(c => c.id === arg); if (!co || ws.money < pr) return; ws.money -= pr; ws.cash[arg] = 1; hireCashier(co); SFX.hire(); toast('Cashier hired!', 'register'); }
   else if (a === 'upg') { const u = UPG.find(x => x.k === arg), l = lvl(arg), pr = upgCost(u.base, l); if (l >= u.max || ws.money < pr) return; ws.money -= pr; ws.upg[arg] = l + 1; if (GLOBAL_UPG[arg]) { save.gup = save.gup || {}; save.gup[arg] = l + 1; } if (arg === 'cap') toast(`You can carry ${playerCap()} items now!`, 'crates'); if (arg === 'wcap') toast(`Stockers carry ${wCap()} items now!`, 'crateHelmet'); writeSave(); SFX.hire(); sparkle(player.pos.x, 1.5, player.pos.z, 10); player.hop = 0.42; }
   else if (a === 'go') { travel(+arg); return; }
   else if (a === 'set') { const k = btn.dataset.k, v = btn.dataset.v; if (k === 'sound') { save.sound = v === '1'; if (save.sound) SFX.click(); } else if (k === 'music' || k === 'vib' || k === 'bubbles') { save.set[k] = v === '1'; if (k === 'music') { if (save.set.music) startMusic(); else stopMusic(); } if (k === 'vib') vibrate(40); } else { save.set[k] = v; if (k === 'gfx') applyGfx(); if (k === 'lang') applyLang(); } SFX.click(); }
