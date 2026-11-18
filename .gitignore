@@ -1,0 +1,4 @@
+# never commit signing keys
+*.jks
+*.keystore
+*.idsig
