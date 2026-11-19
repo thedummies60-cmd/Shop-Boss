@@ -10,6 +10,8 @@ On iPhone, play the web version (`Shop Boss(1).html`).
 - **iPhone:** the green bar at the top of the screen is gone. The top of the screen now takes the colour
   of the world you are in, and the game fills the whole screen.
 - **No zooming:** pinching, double-tapping and Ctrl + scroll no longer zoom the game.
+- **New 3D models:** a real golden crown (with gems and a velvet cap) and a sneaker with a lightning bolt
+  for the Fast Shoes and Staff Speed upgrades.
 - **Your progress saves by itself, you never have to do anything:**
   - the game saves every few seconds, after every purchase and when you close the app
   - it keeps a second backup copy, in case the first one gets broken
@@ -27,7 +29,8 @@ progress stays, without doing anything.
 
 ## Nederlands
 **Nieuw in 1.9:** 4 nieuwe werelden (Junglekamp, Vulkaaneiland, Wolkenrijk, Koraalrif), geen groene
-balk meer bovenaan op iPhone, je kunt niet meer inzoomen, en je voortgang wordt altijd vanzelf bewaard.
+balk meer bovenaan op iPhone, je kunt niet meer inzoomen, een nieuwe kroon en snelle schoen, en je
+voortgang wordt altijd vanzelf bewaard.
 
 **Installeren op Android:** verwijder eerst Shop Boss 1.8 en installeer daarna 1.9 (nieuwe
 ondertekeningssleutel). Vanaf 1.9 installeert elke nieuwe versie gewoon over de oude heen en blijft je

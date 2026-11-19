@@ -3215,10 +3215,18 @@ function hatParts(hat) {
   if (k === 'witch') return [P(RCYL(0.42, 0.03, 0.014, 30), '#4a148c', [0, 1.6, 0]), P(LA([[0, 0], [0.24, 0], [0.16, 0.22], [0.07, 0.4], [0, 0.48]], 22), '#4a148c', [0, 1.6, 0], 1, [-0.15, 0, 0]), P(LA([[0.242, 0.01], [0.225, 0.06]], 22), '#ff9800', [0, 1.6, 0])];
   if (k === 'space') return [P(RCYL(0.3, 0.06, 0.025, 28), '#90a4ae', [0, 1.06, 0]), P(G.lo, '#ff5252', [0.2, 1.1, 0.2], 0.03)];
   if (k === 'pirate') return [P(LA([[0, 0], [0.33, 0], [0.3, 0.1], [0.15, 0.18], [0, 0.2]], 22), '#212121', [0, 1.57, 0], [1.25, 1, 0.8]), P(G.lo, '#ffffff', [0, 1.7, 0.2], [0.04, 0.04, 0.01])];
-  if (k === 'crown') { const p = [P(LA([[0.2, 0], [0.21, 0.13]], 28), '#ffc83d', [0, 1.66, 0])]; for (let i = 0; i < 5; i++) { const a = i / 5 * TAU; p.push(P(G.cone, '#ffc83d', [Math.cos(a) * 0.19, 1.83, Math.sin(a) * 0.19], [0.05, 0.12, 0.05]), P(G.lo, '#ff5a4a', [Math.cos(a) * 0.19, 1.9, Math.sin(a) * 0.19], 0.025)); } return p; }
+  if (k === 'crown') { const y = CROWN.y + CROWN.h / 2, R = CROWN.r + 0.013, p = [P(G.half, '#b71c1c', [0, 1.57, 0], [0.25, 0.17, 0.25])]; for (let i = 0; i < 5; i++) { const a = i / 5 * TAU + PI / 2, b = a + PI / 5; p.push(P(G.sph, i === 0 ? '#e53935' : i % 2 ? '#2f80ed' : '#2ecc71', [Math.cos(a) * R, y, Math.sin(a) * R], [0.042, 0.042, 0.02], [0, PI / 2 - a, 0]), P(G.sph, '#fffaf0', [Math.cos(b) * R, y, Math.sin(b) * R], 0.017)); } return p; }
   return [];
 }
 const HEAD_Y = 1.15;
+const CROWN = { y: 1.555, h: 0.13, r: 0.27 };
+function crownGold() {
+  const { y, h, r } = CROWN, p = [P(LA([[r - 0.022, 0], [r, 0], [r + 0.012, 0.012], [r + 0.012, h - 0.012], [r, h], [r - 0.022, h], [r - 0.022, 0]], 48), '#ffc83d', [0, y, 0])];
+  for (const yy of [y + 0.012, y + h - 0.01]) p.push(P(new THREE.TorusGeometry(r + 0.012, 0.014, 8, 48), '#ffc83d', [0, yy, 0], 1, [PI / 2, 0, 0]));
+  for (let i = 0; i < 5; i++) { const a = i / 5 * TAU + PI / 2, c = Math.cos(a), s = Math.sin(a), t = 0.17; p.push(P(G.cone, '#ffc83d', [c * (r - 0.004), y + h + t / 2 - 0.012, s * (r - 0.004)], [0.085, t, 0.024], [0.14, PI / 2 - a, 0]), P(G.sph, '#ffc83d', [c * (r + 0.008), y + h + t - 0.018, s * (r + 0.008)], 0.03)); }
+  p.push(P(G.sph, '#ffc83d', [0, 1.745, 0], 0.035), P(RB(0.02, 0.075, 0.02, 0.007), '#ffc83d', [0, 1.8, 0]), P(RB(0.056, 0.02, 0.02, 0.007), '#ffc83d', [0, 1.81, 0]));
+  return p;
+}
 const hatGeo = hat => cached('hat' + hat, () => { const g = merge(hatParts(hat)); g.translate(0, -HEAD_Y, 0); return g; });
 /* signed-distance body: big round head, soft neck, bean torso, arms that hang a little away from the body, mitten hands, short legs with rounded feet */
 const sdCap = (px, py, pz, ax, ay, az, bx, by, bz, ra, rb) => { const pax = px - ax, pay = py - ay, paz = pz - az, bax = bx - ax, bay = by - ay, baz = bz - az; const h = clamp((pax * bax + pay * bay + paz * baz) / (bax * bax + bay * bay + baz * baz), 0, 1); return Math.hypot(pax - bax * h, pay - bay * h, paz - baz * h) - (ra + (rb - ra) * h); };
@@ -3282,7 +3290,7 @@ function figure(col, hat, mat) {
 }
 function addHat(head, hat) {
   const out = [];
-  if (hat && hat !== 'none') { const hm = new THREE.Mesh(hatGeo(hat), MATG); hm.castShadow = true; head.add(hm); out.push(hm); if (hat === 'space') { const gl = new THREE.Mesh(G.hi, HELMET_GLASS); gl.scale.setScalar(0.38); gl.position.y = 1.42 - HEAD_Y; gl.renderOrder = 3; head.add(gl); out.push(gl); } }
+  if (hat && hat !== 'none') { const hm = new THREE.Mesh(hatGeo(hat), MATG); hm.castShadow = true; head.add(hm); out.push(hm); if (hat === 'crown') { const gm = new THREE.Mesh(cached('hatcrownGold', () => { const g = merge(crownGold()); g.translate(0, -HEAD_Y, 0); return g; }), GOLD); gm.castShadow = true; head.add(gm); out.push(gm); } if (hat === 'space') { const gl = new THREE.Mesh(G.hi, HELMET_GLASS); gl.scale.setScalar(0.38); gl.position.y = 1.42 - HEAD_Y; gl.renderOrder = 3; head.add(gl); out.push(gl); } }
   return out;
 }
 const BLUE = '#62c9f5', BLUE_W = '#3aa6ec';
@@ -3794,7 +3802,19 @@ function smoothGear(n = 8, rm = 0.5, amp = 0.1, hole = 0.17) { const s = new THR
 function tagShape() { const s = new THREE.Shape(); s.moveTo(-0.55, -0.3); s.lineTo(0.25, -0.3); s.lineTo(0.6, 0); s.lineTo(0.25, 0.3); s.lineTo(-0.55, 0.3); s.closePath(); const h = new THREE.Path(); h.absarc(0.3, 0, 0.08, 0, TAU, true); s.holes.push(h); return s; }
 const meshOf = (parts, gloss = true) => new THREE.Mesh(merge(parts), gloss ? MATG : MAT);
 function crateParts(x, y, z, c = '#c98d4f') { return [P(RB(0.5, 0.36, 0.42, 0.05), c, [x, y, z]), P(RB(0.52, 0.06, 0.44, 0.025), shade(c, -0.25), [x, y + 0.08, z]), P(RB(0.52, 0.06, 0.44, 0.025), shade(c, -0.25), [x, y - 0.08, z])]; }
-function shoeParts(c) { return [P(RB(0.62, 0.1, 0.26, 0.045), '#ffffff', [0.02, 0.05, 0]), P(CAP(0.12, 0.3, 16), c, [0.02, 0.17, 0], 1, [0, 0, PI / 2]), P(RCYL(0.13, 0.26, 0.06, 20), c, [-0.16, 0.1, 0]), P(RCYL(0.1, 0.03, 0.012, 18), '#ffffff', [-0.16, 0.35, 0]), P(G.sph, '#ffffff', [0.22, 0.13, 0], [0.09, 0.07, 0.11]), ...[0, 1, 2].map(i => P(CAP(0.014, 0.16, 6), '#ffffff', [-0.04 + i * 0.07, 0.27 - i * 0.02, 0], 1, [PI / 2, 0, 0])), P(TT([[-0.28, 0.12, 0.13], [-0.1, 0.2, 0.135], [0.06, 0.14, 0.135]], () => 0.02, { ts: 8, rs: 6 }), '#ffffff')]; }
+function shoeParts(c, bolt = '#ffd23f') {
+  // a sneaker seen from the side (heel at -x, toe at +x) with a lightning bolt for speed
+  const s = new THREE.Shape(), dk = shade(c, -0.28);
+  s.moveTo(-0.29, 0.07); s.quadraticCurveTo(-0.335, 0.18, -0.3, 0.27); s.quadraticCurveTo(-0.27, 0.32, -0.2, 0.31); s.quadraticCurveTo(-0.12, 0.3, -0.08, 0.26); s.quadraticCurveTo(-0.03, 0.33, 0.02, 0.31);
+  s.lineTo(0.19, 0.19); s.quadraticCurveTo(0.345, 0.15, 0.345, 0.09); s.lineTo(0.345, 0.07); s.closePath();
+  const sp = s.getPoints(24), cx = (Math.min(...sp.map(q => q.x)) + Math.max(...sp.map(q => q.x))) / 2, cy = (Math.min(...sp.map(q => q.y)) + Math.max(...sp.map(q => q.y))) / 2;
+  const z = new THREE.Shape(); [[0.03, 0.12], [-0.06, -0.005], [-0.005, -0.005], [-0.045, -0.12], [0.07, 0.025], [0.012, 0.025], [0.06, 0.12]].forEach(([x, y], i) => i ? z.lineTo(x, y) : z.moveTo(x, y)); z.closePath();
+  const p = [P(EXT(s, 0.2, 0.035, 18), c, [cx, cy, 0]), P(RB(0.72, 0.07, 0.3, 0.03), '#ffffff', [0.02, 0.035, 0]), P(RB(0.73, 0.026, 0.305, 0.012), dk, [0.02, 0.012, 0]),
+    P(G.sph, '#ffffff', [0.31, 0.1, 0], [0.085, 0.055, 0.13]), P(G.sph, '#263238', [-0.17, 0.335, 0], [0.09, 0.02, 0.07]), P(RB(0.05, 0.1, 0.1, 0.022), dk, [-0.335, 0.27, 0])];
+  for (let i = 0; i < 3; i++) { const x = 0.05 + i * 0.05; p.push(P(CAP(0.013, 0.16, 6, 2), '#ffffff', [x, 0.31 - (x - 0.02) * 0.706 + 0.036, 0], 1, [PI / 2, 0, 0])); }
+  for (const zz of [-0.141, 0.141]) p.push(P(EXT(z, 0.008, 0.004, 4), bolt, [-0.07, 0.19, zz]));
+  return p;
+}
 function buildIcons() {
   ICON_DEF['cash'] = () => { const sv = seed; { const g = new THREE.Group(); for (let i = 0; i < 4; i++) { const b = billMesh(); b.position.set(i * 0.02, i * 0.062, -i * 0.01); b.rotation.y = (i % 2 ? 0.12 : -0.1); g.add(b); } renderIcon('cash', g, [0.4, 0.9, 1], 0.95); } seed = sv; };
   ICON_DEF['register'] = () => { const sv = seed; renderIcon('register', meshOf([P(RB(0.64, 0.24, 0.52, 0.07), '#3b4350', [0, 0.12, 0]), P(RB(0.5, 0.05, 0.36, 0.02), '#59636f', [0, 0.26, -0.03]), ...[0, 1, 2].flatMap(i => [0, 1, 2].map(j => P(RB(0.08, 0.03, 0.07, 0.014), '#e8edf2', [-0.1 + i * 0.1, 0.29, -0.12 + j * 0.09]))), P(RCYL(0.035, 0.2, 0.014, 12), '#2b323c', [0, 0.25, 0.15]), P(RB(0.5, 0.34, 0.06, 0.04), '#2b323c', [0, 0.55, 0.15], 1, [-0.35, 0, 0]), P(RB(0.42, 0.26, 0.012, 0.01), '#7fe0ff', [0, 0.561, 0.181], 1, [-0.35, 0, 0]), P(RB(0.4, 0.08, 0.3, 0.02), '#2fae4e', [0.0, 0.03, 0.27])]), [0.5, 0.55, 1]); seed = sv; };
@@ -3804,7 +3824,7 @@ function buildIcons() {
   ICON_DEF['crates'] = () => { const sv = seed; renderIcon('crates', meshOf([...crateParts(-0.27, 0.18, 0), ...crateParts(0.27, 0.18, 0, '#d39a5c'), ...crateParts(0, 0.54, 0, '#bf8145')], false), [0.5, 0.5, 1]); seed = sv; };
   ICON_DEF['crateHelmet'] = () => { const sv = seed; { const g = new THREE.Group(); g.add(meshOf([...crateParts(-0.27, 0.18, 0), ...crateParts(0.27, 0.18, 0, '#d39a5c')], false)); g.add(meshOf([P(G.half, '#ffb703', [0, 0.36, 0], [0.33, 0.3, 0.33]), P(RCYL(0.38, 0.03, 0.014, 28), '#ffb703', [0, 0.35, 0.02])])); renderIcon('crateHelmet', g, [0.5, 0.6, 1]); } seed = sv; };
   ICON_DEF['shoe'] = () => { const sv = seed; renderIcon('shoe', meshOf(shoeParts('#3fb6f2')), [0.15, 0.5, 1]); seed = sv; };
-  ICON_DEF['shoeY'] = () => { const sv = seed; renderIcon('shoeY', meshOf(shoeParts('#ffb703')), [0.15, 0.5, 1]); seed = sv; };
+  ICON_DEF['shoeY'] = () => { const sv = seed; renderIcon('shoeY', meshOf(shoeParts('#ffb703', '#2f80ed')), [0.15, 0.5, 1]); seed = sv; };
   ICON_DEF['sprout'] = () => { const sv = seed; renderIcon('sprout', meshOf([P(BLOB(3, 0.08, 3), '#8a5a32', [0, 0, 0], [0.4, 0.16, 0.4]), P(TT([[0, 0, 0], [0.02, 0.25, 0], [0, 0.45, 0]], () => 0.035, { ts: 8, rs: 8 }), '#4caf50'), P(TT([[0, 0.42, 0], [0.18, 0.55, 0], [0.38, 0.5, 0]], leafRF(0.12, 0.02), { ts: 10, rs: 8, side: [0, 0, 1] }), '#5cc35a'), P(TT([[0, 0.38, 0], [-0.16, 0.48, 0], [-0.34, 0.42, 0]], leafRF(0.1, 0.02), { ts: 10, rs: 8, side: [0, 0, 1] }), '#43a047')]), [0.3, 0.5, 1]); seed = sv; };
   ICON_DEF['tag'] = () => { const sv = seed; renderIcon('tag', meshOf([P(EXT(tagShape(), 0.06, 0.04), '#ffc83d', [0, 0, 0], 1, [0, 0, 0.35]), P(new THREE.TorusGeometry(0.1, 0.02, 10, 24), '#9aa3ad', [0.3 * Math.cos(0.35), 0.3 * Math.sin(0.35), 0.0])]), [0.15, 0.25, 1]); seed = sv; };
   ICON_DEF['heart'] = () => { const sv = seed; renderIcon('heart', meshOf([P(EXT(heartShape(), 0.18, 0.08), '#ff4d6d')]), [0.15, 0.2, 1]); seed = sv; };
