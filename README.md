@@ -9,6 +9,8 @@ On iPhone, play the web version (`Shop Boss(1).html`).
   Each one has its own products, machines and decorations. Moon Base now has a portal to Jungle Camp.
 - **iPhone:** the green bar at the top of the screen is gone. The top of the screen now takes the colour
   of the world you are in, and the game fills the whole screen.
+- **More variety:** colorful customers (and small kids), golden VIP customers who pay 3×, gift boxes that
+  fall from the sky (money, a jackpot or a boost) and missions with cash rewards.
 - **Welcome back:** with a cashier and a stocker hired, your staff keep selling while you are away
   (up to 2 hours) and you collect the money when you come back.
 - **No zooming:** pinching, double-tapping and Ctrl + scroll no longer zoom the game.
@@ -32,7 +34,8 @@ progress stays, without doing anything.
 ## Nederlands
 **Nieuw in 1.9:** 4 nieuwe werelden (Junglekamp, Vulkaaneiland, Wolkenrijk, Koraalrif), geen groene
 balk meer bovenaan op iPhone, je kunt niet meer inzoomen, een nieuwe kroon en snelle schoen,
-"Welkom terug!" (je personeel verdient geld terwijl je weg bent) en je voortgang wordt altijd vanzelf
+"Welkom terug!" (je personeel verdient geld terwijl je weg bent), meer variatie (kleurrijke klanten,
+VIP-klanten, cadeaudozen uit de lucht en opdrachten met beloningen) en je voortgang wordt altijd vanzelf
 bewaard. Alles voor de Play Store staat in de map `playstore/`.
 
 **Installeren op Android:** verwijder eerst Shop Boss 1.8 en installeer daarna 1.9 (nieuwe
