@@ -1,10 +1,25 @@
 # Shop-Boss
 A mobile game for Android. Download the APK, skip the warnings and install the app.
 
-**Newest version: 1.9** → download `Shop-Boss-1.9.apk` (the same file as `Shop-Boss.apk`).
+**Newest version: 2.0** → download `Shop-Boss-2.0.apk` (the same file as `Shop-Boss.apk`).
 On iPhone, play the web version (`Shop Boss(1).html`).
 
-## What's new in 1.9
+## What's new in 2.0
+- **Shop (Android app):** buy cash (bag, pile or treasure chest), **Double cash** (every customer pays 2×,
+  in every world, forever), all colors, all hats or the **Legendary pack** with real money. Payments go through
+  Google Play, so they only work in the app from the Play Store. Bought something before? **Restore purchases**
+  gets it back. On iPhone and on claude.ai there is no shop.
+- **New menu:** six big buttons (Missions, Skins, Worlds, Daily gift, Shop, Settings) and your boss level at the top.
+- **Daily gift:** a gift every day; it grows for 7 days in a row and day 7 is a new skin. Skip a day and you start again.
+- **Boss level:** every customer you serve gives XP. Every new level makes your prices 1% higher (up to +50%).
+- **Combo:** serve customers in a row without anyone getting angry. Every customer in the combo pays 2% more
+  (up to +50%). Let a customer get angry and the combo is gone.
+- **Bug fix:** small fixes in the menu layout on short screens.
+
+## Installing 2.0 on Android
+2.0 is signed with the same key as 1.9, so it installs over 1.9 and your progress stays.
+
+## What was new in 1.9
 - **4 new worlds, 12 in total:** Jungle Camp, Volcano Island, Cloud Kingdom and Coral Reef.
   Each one has its own products, machines and decorations. Moon Base now has a portal to Jungle Camp.
 - **iPhone:** the green bar at the top of the screen is gone. The top of the screen now takes the colour
@@ -42,6 +57,11 @@ From 1.9 on, every new version is signed with the same key, so it installs over 
 progress stays, without doing anything.
 
 ## Nederlands
+**Nieuw in 2.0:** een **Winkel** in de Android-app (geld, Dubbel geld, alle kleuren, alle hoeden en het
+Legendarisch pakket, betalen via Google Play), een nieuw menu met zes knoppen, een **dagcadeau** (7 dagen op rij,
+dag 7 is een nieuwe skin), een **baaslevel** (elk level +1% prijzen) en **combo's** (klanten op rij helpen zonder
+dat iemand boos wordt geeft tot +50%). 2.0 installeert gewoon over 1.9 heen.
+
 **Nieuw in 1.9:** 4 nieuwe werelden (Junglekamp, Vulkaaneiland, Wolkenrijk, Koraalrif), geen groene
 balk meer bovenaan op iPhone, je kunt niet meer inzoomen, een nieuwe kroon en snelle schoen, meer
 variatie (kleurrijke klanten, VIP-klanten, cadeaudozen uit de lucht en opdrachten). Met opdrachten win
@@ -56,7 +76,10 @@ voortgang vanzelf staan.
 Everything for the Play Store listing (texts, icon, banner, screenshots and a step-by-step guide)
 is in the `playstore/` folder. The privacy policy is `PRIVACY.md`.
 
-## Building the APK
-`tools/build_apk.py` puts the web game into the previous APK, raises the version number and signs it.
-It needs the Android build-tools (`zipalign`, `apksigner`, `aapt2`) and the release keystore.
-The keystore is never stored in this repository.
+## Building the app
+From 2.0 the Android app is a Capacitor project in `app/` with a small Google Play Billing plugin
+(`app/android/app/src/main/java/com/shopboss/game/ShopBillingPlugin.java`).
+`tools/build_android.py --version 2.0 --code 24` puts the web game into it and builds the signed APK and the
+Play Store `.aab` with Gradle. It needs Node, JDK 21, the Android SDK (platform 36) and the release keystore
+(`SHOPBOSS_KEYSTORE`, `SHOPBOSS_KS_PASS`). The keystore is never stored in this repository.
+(`tools/build_apk.py` is the older way, used up to 1.9.)

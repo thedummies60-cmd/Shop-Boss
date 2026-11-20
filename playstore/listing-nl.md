@@ -20,10 +20,11 @@ Shop Boss is een vrolijk 3D-winkelspel. Begin met één bananenboom en een klein
 • Vang cadeaudozen die uit de lucht vallen
 • Voltooi opdrachten en win 40 kleuren en hoeden, van een feesthoed tot legendarische skins zoals Regenboog en Vuurkroon
 • Let op verrassingen zoals spitsuur en dubbel geld
+• Haal elke dag een dagcadeau, stijg in level en maak combo's voor extra geld
 
 Makkelijk te besturen met één vinger: sleep over het scherm om te lopen.
 
-Speelt offline. Geen reclame, geen aankopen in de app en geen tracking. Je spel wordt vanzelf bewaard.
+Speelt offline. Geen reclame en geen tracking. Optionele aankopen in de app (geld, een geldboost en skins). Je spel wordt vanzelf bewaard.
 
 Beschikbaar in het Engels en het Nederlands.
 

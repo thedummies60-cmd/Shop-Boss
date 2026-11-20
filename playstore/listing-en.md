@@ -20,10 +20,11 @@ Shop Boss is a cheerful 3D shop game. Start with one banana tree and a small sta
 • Catch gift boxes that fall from the sky
 • Complete missions to win 40 colors and hats, from a party hat to legendary skins like Rainbow and Fire Crown
 • Watch out for surprise events like rush hour and double cash
+• Get a daily gift, level up your boss and build combos for extra cash
 
 Easy one-finger controls: drag anywhere on the screen to walk.
 
-Plays offline. No ads, no in-app purchases and no tracking. Your game saves by itself.
+Plays offline. No ads and no tracking. Optional in-app purchases (cash, a cash boost and skins). Your game saves by itself.
 
 Available in English and Dutch.
 

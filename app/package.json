@@ -1,0 +1,17 @@
+{
+  "name": "shop-boss-app",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Android wrapper (Capacitor) for the Shop Boss web game, with Google Play Billing",
+  "scripts": {
+    "sync": "cap sync android"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.6.2",
+    "@capacitor/app": "8.1.2",
+    "@capacitor/core": "8.6.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.6.2"
+  }
+}

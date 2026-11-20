@@ -1,0 +1,18 @@
+{
+	"appId": "com.shopboss.game",
+	"appName": "Shop Boss",
+	"webDir": "www",
+	"backgroundColor": "#86d35f",
+	"android": {
+		"backgroundColor": "#86d35f",
+		"allowMixedContent": false,
+		"captureInput": true,
+		"webContentsDebuggingEnabled": false
+	},
+	"plugins": {
+		"SystemBars": {
+			"insetsHandling": "css",
+			"initialViewportFitValueHint": "cover"
+		}
+	}
+}
