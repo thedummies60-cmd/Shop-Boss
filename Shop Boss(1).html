@@ -3223,7 +3223,7 @@ const rainbowShader = sh => { rimShader(sh); sh.uniforms.uT = FX.uT; sh.fragment
     vec3 rbC = clamp(abs(mod(rbH * 6.0 + vec3(0.0, 4.0, 2.0), 6.0) - 3.0) - 1.0, 0.0, 1.0);
     diffuseColor.rgb = mix(vec3(1.0), rbC, 0.82);`); };
 const inScene = o => { for (let p = o; p; p = p.parent) if (p === scene) return true; return false; };
-const HALO_MAT = new THREE.MeshBasicMaterial({ color: 0xfff1a8 });
+const HALO_MAT = new THREE.MeshBasicMaterial({ color: 0xffe066 }), HALO_GLOW = new THREE.MeshBasicMaterial({ color: 0xfff3b0, transparent: true, opacity: 0.3, depthWrite: false, blending: THREE.AdditiveBlending });
 function charMat(col) {
   if (CHAR_MATS[col]) return CHAR_MATS[col];
   let m;
@@ -3245,8 +3245,8 @@ function hatParts(hat) {
   if (k === 'witch') return [P(RCYL(0.42, 0.03, 0.014, 30), '#4a148c', [0, 1.6, 0]), P(LA([[0, 0], [0.24, 0], [0.16, 0.22], [0.07, 0.4], [0, 0.48]], 22), '#4a148c', [0, 1.6, 0], 1, [-0.15, 0, 0]), P(LA([[0.242, 0.01], [0.225, 0.06]], 22), '#ff9800', [0, 1.6, 0])];
   if (k === 'space') return [P(RCYL(0.3, 0.06, 0.025, 28), '#90a4ae', [0, 1.06, 0]), P(G.lo, '#ff5252', [0.2, 1.1, 0.2], 0.03)];
   if (k === 'pirate') return [P(LA([[0, 0], [0.33, 0], [0.3, 0.1], [0.15, 0.18], [0, 0.2]], 22), '#212121', [0, 1.57, 0], [1.25, 1, 0.8]), P(G.lo, '#ffffff', [0, 1.7, 0.2], [0.04, 0.04, 0.01])];
-  if (k === 'fire') return [P(RCYL(0.272, 0.07, 0.025, 32), '#ff7043', [0, 1.55, 0]), P(LA([[0.274, 0.0], [0.274, 0.025]], 32), '#ffd23f', [0, 1.575, 0])];
-  if (k === 'unicorn') return [P(LA([[0, 0], [0.085, 0], [0, 0.46]], 20), (x, y, z) => Math.floor(y * 20 + (Math.atan2(z, x) + PI) / TAU * 2) % 2 ? '#ffd54f' : '#ff80ab', [0, 1.665, 0.12], 1, [0.45, 0, 0]), P(RCYL(0.092, 0.035, 0.012, 18), '#b388ff', [0, 1.66, 0.115], 1, [0.45, 0, 0]), ...[-1, 1].flatMap(sx => [P(G.cone, '#ffffff', [sx * 0.18, 1.66, -0.04], [0.055, 0.13, 0.035], [0, 0, -sx * 0.35]), P(G.cone, '#ffb3d9', [sx * 0.178, 1.65, -0.012], [0.03, 0.08, 0.01], [0, 0, -sx * 0.35])])];
+  if (k === 'fire') return [P(RCYL(0.272, 0.08, 0.025, 32), '#bf360c', [0, 1.545, 0]), ...[1.548, 1.62].map(y => P(LA([[0.276, 0], [0.276, 0.018]], 32), '#ffc83d', [0, y, 0])), ...[0, 1, 2, 3, 4, 5].map(i => { const a = i / 6 * TAU + 0.26; return P(G.sph, '#ffeb3b', [Math.cos(a) * 0.278, 1.585, Math.sin(a) * 0.278], [0.022, 0.022, 0.022]); })];
+  if (k === 'unicorn') return [P(LA([[0, 0], [0.088, 0], [0.072, 0.12], [0.052, 0.26], [0.03, 0.38], [0, 0.48]], 24), (x, y, z) => Math.floor(y * 24 + (Math.atan2(z, x) + PI) / TAU * 3) % 2 ? '#fff6d5' : '#ffc83d', [0, 1.665, 0.125], 1, [0.45, 0, 0]), P(RCYL(0.095, 0.035, 0.012, 20), '#c39bff', [0, 1.66, 0.12], 1, [0.45, 0, 0]), P(EXT(starShape(0.06, 0.026), 0.015, 0.006, 6), '#fffde7', [0, 1.665 + Math.cos(0.45) * 0.5, 0.125 + Math.sin(0.45) * 0.5]), ...['#ff6fa8', '#ffa94d', '#ffe066', '#69db7c', '#4dabf7', '#b197fc'].map((c, i) => { const t = 0.3 + i * 0.26; return P(BLOB(2, 0.2, i + 11), c, [(i % 2 ? 0.035 : -0.035), 1.42 + 0.315 * Math.cos(t), -0.315 * Math.sin(t)], [0.09, 0.075, 0.085]); }), ...[-1, 1].flatMap(sx => [P(G.cone, '#ffffff', [sx * 0.19, 1.67, -0.03], [0.062, 0.15, 0.04], [0, 0, -sx * 0.35]), P(G.cone, '#ffb3d9', [sx * 0.188, 1.66, -0.002], [0.034, 0.09, 0.012], [0, 0, -sx * 0.35])])];
   if (k === 'party') return [P(LA([[0, 0], [0.17, 0], [0, 0.42]], 24), (x, y) => Math.floor(y * 14) % 2 ? '#ff4f9a' : '#ffd23f', [0.05, 1.66, 0], 1, [0, 0, -0.18]), P(G.sph, '#3fb6f2', [0.125, 2.075, 0], 0.055), P(LA([[0.172, 0], [0.162, 0.035]], 24), '#3fb6f2', [0.05, 1.66, 0], 1, [0, 0, -0.18])];
   if (k === 'tophat') return [P(RCYL(0.36, 0.025, 0.012, 32), '#212121', [0, 1.615, 0]), P(RCYL(0.225, 0.36, 0.03, 28), '#212121', [0, 1.62, 0]), P(LA([[0.228, 0.03], [0.228, 0.09]], 28), '#e53935', [0, 1.62, 0])];
   if (k === 'chef') return [P(RCYL(0.268, 0.14, 0.03, 28), '#ffffff', [0, 1.56, 0]), P(BLOB(3, 0.12, 7), '#ffffff', [0, 1.8, 0], [0.31, 0.18, 0.31]), P(BLOB(2, 0.15, 8), '#f7f7f7', [0.14, 1.86, 0.08], [0.15, 0.12, 0.15]), P(BLOB(2, 0.15, 9), '#f7f7f7', [-0.13, 1.87, -0.06], [0.15, 0.12, 0.15])];
@@ -3327,8 +3327,8 @@ function figure(col, hat, mat) {
 }
 function addHat(head, hat) {
   const out = [];
-  if (hat === 'halo') { const m = new THREE.Mesh(cached('hathalo', () => { const g = new THREE.TorusGeometry(0.2, 0.035, 12, 40); g.rotateX(PI / 2); g.translate(0, 1.97 - HEAD_Y, 0); return g; }), HALO_MAT); head.add(m); out.push(m); FX.bob = FX.bob.filter(inScene); FX.bob.push(m); return out; }
-  if (hat && hat !== 'none') { const hm = new THREE.Mesh(hatGeo(hat), MATG); hm.castShadow = true; head.add(hm); out.push(hm); if (hat === 'crown') { const gm = new THREE.Mesh(cached('hatcrownGold', () => { const g = merge(crownGold()); g.translate(0, -HEAD_Y, 0); return g; }), GOLD); gm.castShadow = true; head.add(gm); out.push(gm); } if (hat === 'fire') { const fm = new THREE.Mesh(cached('hatflames', () => { const p = []; for (let i = 0; i < 8; i++) { const a = i / 8 * TAU, big = i % 2 === 0; p.push(P(G.cone, (x, y) => y > 0.15 ? '#fff59d' : y > -0.2 ? '#ffb300' : '#ff6d00', [Math.cos(a) * 0.255, big ? 0.13 : 0.09, Math.sin(a) * 0.255], [big ? 0.075 : 0.06, big ? 0.26 : 0.18, big ? 0.075 : 0.06])); } return merge(p); }), MATB); fm.position.y = 1.615 - HEAD_Y; head.add(fm); out.push(fm); FX.flick = FX.flick.filter(inScene); FX.flick.push(fm); } if (hat === 'space') { const gl = new THREE.Mesh(G.hi, HELMET_GLASS); gl.scale.setScalar(0.38); gl.position.y = 1.42 - HEAD_Y; gl.renderOrder = 3; head.add(gl); out.push(gl); } }
+  if (hat === 'halo') { const y = 1.98 - HEAD_Y, ring = new THREE.Mesh(cached('hathalo2', () => { const g = new THREE.TorusGeometry(0.21, 0.045, 14, 48); g.rotateX(PI / 2); g.translate(0, y, 0); return g; }), HALO_MAT), glow = new THREE.Mesh(cached('hathaloglow', () => { const g = new THREE.TorusGeometry(0.21, 0.1, 10, 40); g.rotateX(PI / 2); g.translate(0, y, 0); return g; }), HALO_GLOW), sp = new THREE.Mesh(cached('hathalosp', () => merge(Array.from({ length: 5 }, (_, i) => { const a = i / 5 * TAU + 0.3; return P(G.lo, '#ffffff', [Math.cos(a) * 0.31, y + Math.sin(i * 2) * 0.05, Math.sin(a) * 0.31], 0.024); }))), MATB); FX.bob = FX.bob.filter(inScene); for (const m of [ring, glow, sp]) { head.add(m); out.push(m); FX.bob.push(m); } return out; }
+  if (hat && hat !== 'none') { const hm = new THREE.Mesh(hatGeo(hat), MATG); hm.castShadow = true; head.add(hm); out.push(hm); if (hat === 'crown') { const gm = new THREE.Mesh(cached('hatcrownGold', () => { const g = merge(crownGold()); g.translate(0, -HEAD_Y, 0); return g; }), GOLD); gm.castShadow = true; head.add(gm); out.push(gm); } if (hat === 'fire') { const fm = new THREE.Mesh(cached('hatflames2', () => { const tear = LA([[0, 0], [0.05, 0.02], [0.066, 0.07], [0.056, 0.14], [0.03, 0.22], [0, 0.3]], 14), p = []; for (let i = 0; i < 9; i++) { const a = i / 9 * TAU; p.push(P(tear, (x, y) => y > 0.21 ? '#ffe082' : y > 0.11 ? '#ff9800' : '#e64a19', [Math.cos(a) * 0.255, 0, Math.sin(a) * 0.255], [1.05, i % 2 ? 0.95 : 1.25, 1.05])); } for (let i = 0; i < 9; i++) { const a = (i + 0.5) / 9 * TAU; p.push(P(tear, (x, y) => y > 0.12 ? '#fffde7' : '#ffd54f', [Math.cos(a) * 0.235, 0.01, Math.sin(a) * 0.235], [0.7, 0.75, 0.7])); } return merge(p); }), MATB); fm.position.y = 1.62 - HEAD_Y; head.add(fm); out.push(fm); FX.flick = FX.flick.filter(inScene); FX.flick.push(fm); } if (hat === 'space') { const gl = new THREE.Mesh(G.hi, HELMET_GLASS); gl.scale.setScalar(0.38); gl.position.y = 1.42 - HEAD_Y; gl.renderOrder = 3; head.add(gl); out.push(gl); } }
   return out;
 }
 const BLUE = '#62c9f5', BLUE_W = '#3aa6ec';
@@ -4888,7 +4888,7 @@ const endJoy = e => { if (e.pointerId !== joy.id) return; joy.id = null; joy.x =
 window.addEventListener('pointerup', endJoy); window.addEventListener('pointercancel', endJoy);
 window.addEventListener('keydown', e => { keys[e.key.toLowerCase()] = true; ac(); startMusic(); });
 window.addEventListener('keyup', e => { keys[e.key.toLowerCase()] = false; });
-window.addEventListener('blur', () => { for (const k in keys) keys[k] = false; });
+window.addEventListener('blur', () => { for (const k in keys) keys[k] = false; if (ready && inGame && !menuOpen && !traveling) { writeSave(true); openMenu(); } });
 document.addEventListener('contextmenu', e => e.preventDefault());
 function vibrate(ms) { if (save && save.set && !save.set.vib) return; try { navigator.vibrate && navigator.vibrate(ms); } catch (_) { } }
 
@@ -5199,7 +5199,7 @@ function frame(now) {
   updCamera(dt); updLabels(); updHud(dt);
   FX.uT.value = MT;
   for (const o of FX.flick) o.scale.set(1 + Math.sin(MT * 9 + o.id) * 0.04, 1 + Math.sin(MT * 13 + o.id) * 0.14, 1 + Math.cos(MT * 11 + o.id) * 0.04);
-  for (const o of FX.bob) o.position.y = Math.sin(MT * 2.4) * 0.03;
+  for (const o of FX.bob) { o.position.y = Math.sin(MT * 2.4) * 0.03; o.rotation.y = MT * 0.8; }
   dotT -= dt; if (dotT <= 0) { dotT = 0.5; updDots(); }
   saveT -= dt; if (saveT <= 0) { saveT = 5; writeSave(); }
   renderer.render(scene, camera);
