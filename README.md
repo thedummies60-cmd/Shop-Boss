@@ -10,7 +10,9 @@ On iPhone, play the web version (`Shop Boss(1).html`).
 - **iPhone:** the green bar at the top of the screen is gone. The top of the screen now takes the colour
   of the world you are in, and the game fills the whole screen.
 - **More variety:** colorful customers (and small kids), golden VIP customers who pay 3×, gift boxes that
-  fall from the sky (money, a jackpot or a boost) and missions.
+  fall from the sky now and then (money, a jackpot or a boost) and missions.
+- **Missions live in the menu:** open **Missions** in the main menu to see 3 missions per world, their
+  progress and the prize; a red dot on the menu button shows when a prize is ready to claim.
 - **Skins are won, not bought:** every mission wins a new color or hat (34 to collect, including a party hat,
   chef hat, cowboy hat, top hat, viking helmet and the golden crown). They can no longer be bought with money.
 - **Welcome back:** with a cashier and a stocker hired, your staff keep selling while you are away
