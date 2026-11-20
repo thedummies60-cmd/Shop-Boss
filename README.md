@@ -13,6 +13,12 @@ On iPhone, play the web version (`Shop Boss(1).html`).
   fall from the sky now and then (money, a jackpot or a boost) and missions.
 - **Missions live in the menu:** open **Missions** in the main menu to see 3 missions per world, their
   progress and the prize; a red dot on the menu button shows when a prize is ready to claim.
+  Missions get harder the more you finish, and now and then a legendary mission appears.
+- **Legendary skins:** Rainbow, Diamond, Neon, Halo, Unicorn Horn and Fire Crown can only be won with a
+  legendary mission. Every skin shows its rarity: Common, Rare, Epic or Legendary (40 to collect).
+- **More settings:** effects and music volume, battery saver, shadows, screen shake, joystick size and
+  buttons on the left or right.
+- **Better menu:** your worlds, skins and missions at a glance, and the world name on the Play button.
 - **Skins are won, not bought:** every mission wins a new color or hat (34 to collect, including a party hat,
   chef hat, cowboy hat, top hat, viking helmet and the golden crown). They can no longer be bought with money.
 - **Welcome back:** with a cashier and a stocker hired, your staff keep selling while you are away

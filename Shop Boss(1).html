@@ -111,7 +111,7 @@ button{touch-action:manipulation}
 #menu{position:fixed;inset:0;z-index:4;display:flex;align-items:center;justify-content:center;background:radial-gradient(130% 80% at 50% 35%,rgba(23,52,80,.05),rgba(23,52,80,.62));padding-block:env(safe-area-inset-top,0px) env(safe-area-inset-bottom,0px);box-sizing:border-box;animation:mfade .35s ease-out}
 @keyframes mfade{from{opacity:0}}
 .mwrap{display:flex;flex-direction:column;align-items:center;gap:16px;width:min(360px,calc(100% - 32px))}
-.logo{width:min(292px,80vw);max-height:31vh;aspect-ratio:340/270;transform:rotate(-3deg);animation:lfl 3.2s ease-in-out infinite;margin-bottom:2px}
+.logo{width:min(292px,80vw);max-height:26vh;aspect-ratio:340/270;transform:rotate(-3deg);animation:lfl 3.2s ease-in-out infinite;margin-bottom:2px}
 .logo svg{display:block;width:100%;height:100%;overflow:visible;font-family:var(--font);filter:drop-shadow(0 7px 0 rgba(17,40,66,.32))}
 @keyframes lfl{50%{transform:rotate(-1deg) translateY(-6px) scale(1.03)}}
 .mtag{color:#fff;font-weight:700;font-size:16px;text-shadow:0 2px 0 rgba(0,0,0,.35);text-align:center}
@@ -136,6 +136,19 @@ body.menu-open #hud,body.menu-open #labels,body.menu-open #dragHint,body.menu-op
 .away-amt .ico{width:52px;height:52px}
 .buy.big{font-size:22px;padding:8px 40px;min-height:54px;margin-top:4px}
 .bub.vip{border-color:#ffc83d;background:#fffbea}.bub.vip::after{border-color:#ffc83d;background:#fffbea}
+.rar{display:inline-block;font-style:normal;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;line-height:16px;padding:0 6px;border-radius:6px;margin-left:6px;vertical-align:3px;color:#fff;background:#9fb3c4}
+.rar.rare{background:#3fb6f2}.rar.epic{background:#9c7cf4}.rar.legendary{background:linear-gradient(90deg,#ff5a8a,#ffb300,#2ecc71,#3fb6f2,#9c7cf4)}
+.row.leg{background:linear-gradient(90deg,#fff8e1,#fde7f3 60%,#e8f4ff);border-radius:16px;padding-inline:8px}.row.leg .ic{background:#fff}
+.prize.leg{background:linear-gradient(135deg,#ffe082,#f8bbd0,#b3e5fc)}
+.mbtn .dot{display:grid;place-items:center;font:800 11px var(--font);color:#fff;font-style:normal;width:20px;height:20px}
+.mstats{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.mstats span{display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.94);border-radius:14px;padding:3px 10px 3px 4px;box-shadow:0 3px 0 rgba(17,40,66,.25);font-weight:800;font-size:15px;color:var(--ink);font-variant-numeric:tabular-nums}
+.mstats .ico{width:30px;height:30px}.mstats em{display:flex;flex-direction:column;font-style:normal;line-height:1.05}.mstats i{font-style:normal;font-size:10px;font-weight:700;color:#557089;text-transform:uppercase;letter-spacing:.04em}
+.mbtn.play{display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}.mbtn.play small{font-size:15px;font-weight:700;letter-spacing:.04em;opacity:.92;margin-top:6px}
+.mtag,.mstats,.mfoot,.mgrid .mbtn{animation:min .45s cubic-bezier(.2,1.4,.4,1) both}.mstats{animation-delay:.05s}.mgrid .mbtn:nth-child(1){animation-delay:.1s}.mgrid .mbtn:nth-child(2){animation-delay:.14s}.mgrid .mbtn:nth-child(3){animation-delay:.18s}.mgrid .mbtn:nth-child(4){animation-delay:.22s}
+@keyframes min{from{opacity:0;transform:translateY(14px) scale(.94)}}
+body.left-hand #btns{right:auto;left:calc(12px + env(safe-area-inset-left,0px))}body.left-hand #money,body.left-hand #worldChip{left:auto;right:calc(12px + env(safe-area-inset-right,0px))}body.left-hand #evChip{left:auto!important;right:12px}
+@media (prefers-reduced-motion:reduce){.mtag,.mstats,.mfoot,.mgrid .mbtn{animation:none}}
 #err{position:fixed;left:16px;right:16px;bottom:16px;background:#fff;color:#b8362a;border-radius:12px;padding:10px 14px;font-weight:700;z-index:10;font-size:14px}
 @media (prefers-reduced-motion:reduce){.logo,.mbtn.play,#menu{animation:none}.jk b,#toast.show,.sheet,#money.pop,.row,.bub.angry,.maxl,.sq .dot{animation:none}}
 </style>
@@ -160,7 +173,8 @@ body.menu-open #hud,body.menu-open #labels,body.menu-open #dragHint,body.menu-op
 <div id="menu" hidden><div class="mwrap">
   <div class="logo" role="img" aria-label="Shop Boss"><svg viewBox="0 -20 340 270" aria-hidden="true"><defs><linearGradient id="lgB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3274b5"/><stop offset="1" stop-color="#1b3a63"/></linearGradient><linearGradient id="lgG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff7a8"/><stop offset=".5" stop-color="#ffd23f"/><stop offset="1" stop-color="#ff9f1a"/></linearGradient><linearGradient id="lgC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff08a"/><stop offset="1" stop-color="#f4a21f"/></linearGradient><linearGradient id="lgS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".16"/><stop offset=".45" stop-color="#000" stop-opacity="0"/></linearGradient></defs><path d="M44 46H75.5L56 104H18Z" fill="#ee4444"/><path d="M18 103.5A19 19 0 0 0 56 103.5Z" fill="#ee4444"/><path d="M75.5 46H107L94 104H56Z" fill="#fff6ec"/><path d="M56 103.5A19 19 0 0 0 94 103.5Z" fill="#fff6ec"/><path d="M107 46H138.5L132 104H94Z" fill="#ee4444"/><path d="M94 103.5A19 19 0 0 0 132 103.5Z" fill="#ee4444"/><path d="M138.5 46H170L170 104H132Z" fill="#fff6ec"/><path d="M132 103.5A19 19 0 0 0 170 103.5Z" fill="#fff6ec"/><path d="M170 46H201.5L208 104H170Z" fill="#ee4444"/><path d="M170 103.5A19 19 0 0 0 208 103.5Z" fill="#ee4444"/><path d="M201.5 46H233L246 104H208Z" fill="#fff6ec"/><path d="M208 103.5A19 19 0 0 0 246 103.5Z" fill="#fff6ec"/><path d="M233 46H264.5L284 104H246Z" fill="#ee4444"/><path d="M246 103.5A19 19 0 0 0 284 103.5Z" fill="#ee4444"/><path d="M264.5 46H296L322 104H284Z" fill="#fff6ec"/><path d="M284 103.5A19 19 0 0 0 322 103.5Z" fill="#fff6ec"/><path d="M44 46H296L322 104H18Z" fill="url(#lgS)"/><rect x="34" y="32" width="272" height="19" rx="9.5" fill="#c4363d"/><rect x="26" y="114" width="288" height="124" rx="28" fill="url(#lgB)" stroke="#ffc531" stroke-width="7"/><rect x="40" y="123" width="260" height="34" rx="17" fill="#fff" opacity=".09"/><text x="174" y="158" text-anchor="middle" font-size="35" font-weight="800" fill="#fff" letter-spacing="8">SHOP</text><text x="171" y="225" text-anchor="middle" font-size="76" font-weight="800" fill="url(#lgG)" stroke="#7a3e00" stroke-width="4" paint-order="stroke" stroke-linejoin="round" letter-spacing="2">BOSS</text><g transform="rotate(-9 170 26)"><path d="M140 34L133 0L153 15L170 -9L187 15L207 0L200 34Z" fill="url(#lgC)" stroke="#b86b0c" stroke-width="3.5" stroke-linejoin="round"/><rect x="137" y="27" width="66" height="13" rx="5" fill="#ffc531" stroke="#b86b0c" stroke-width="3"/><circle cx="133" cy="0" r="5.5" fill="#fff08a" stroke="#b86b0c" stroke-width="3"/><circle cx="170" cy="-10" r="6.5" fill="#fff08a" stroke="#b86b0c" stroke-width="3"/><circle cx="207" cy="0" r="5.5" fill="#fff08a" stroke="#b86b0c" stroke-width="3"/><circle cx="170" cy="33.5" r="4.5" fill="#e8364a"/><circle cx="153" cy="33.5" r="3.4" fill="#3aa0ff"/><circle cx="187" cy="33.5" r="3.4" fill="#3aa0ff"/></g></svg></div>
   <div class="mtag">Build the biggest shop in 12 worlds</div>
-  <button id="mPlay" class="mbtn play" type="button">PLAY</button>
+  <div class="mstats" id="mStats"></div>
+  <button id="mPlay" class="mbtn play" type="button"><span id="mPlayT">PLAY</span><small id="mPlayW"></small></button>
   <div class="mgrid">
     <button id="mMis" class="mbtn" type="button"><img alt=""><span>Missions</span></button>
     <button id="mSkins" class="mbtn" type="button"><img alt=""><span>Skins</span></button>
@@ -3209,10 +3223,20 @@ const rimShader = sh => {
     totalEmissiveRadiance += diffuseColor.rgb * (0.16 + pow(rimF, 2.0) * 0.55) + vec3(0.16, 0.2, 0.22) * pow(rimF, 3.5);`);
 };
 const CHAR_MATS = {};
+const FX = { rainbow: null, flick: [], bob: [], uT: { value: 0 } };
+const rainbowShader = sh => { rimShader(sh); sh.uniforms.uT = FX.uT; sh.fragmentShader = 'uniform float uT;\n' + sh.fragmentShader.replace('#include <color_fragment>', `#include <color_fragment>
+    float rbH = fract(vViewPosition.y * 0.9 + uT * 0.25);
+    vec3 rbC = clamp(abs(mod(rbH * 6.0 + vec3(0.0, 4.0, 2.0), 6.0) - 3.0) - 1.0, 0.0, 1.0);
+    diffuseColor.rgb = mix(vec3(1.0), rbC, 0.82);`); };
+const inScene = o => { for (let p = o; p; p = p.parent) if (p === scene) return true; return false; };
+const HALO_MAT = new THREE.MeshBasicMaterial({ color: 0xfff1a8 });
 function charMat(col) {
   if (CHAR_MATS[col]) return CHAR_MATS[col];
-  const m = new THREE.MeshPhysicalMaterial({ color: col, roughness: 0.34, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.12, sheen: 0.6, sheenColor: new THREE.Color('#ffffff'), sheenRoughness: 0.4, envMapIntensity: 0.75 });
-  m.onBeforeCompile = rimShader; m.customProgramCacheKey = () => 'rimchar';
+  let m;
+  if (col === 'fx:diamond') m = new THREE.MeshPhysicalMaterial({ color: '#6fd3ff', emissive: '#0f4c66', emissiveIntensity: 0.6, roughness: 0.06, metalness: 0.3, clearcoat: 1, clearcoatRoughness: 0.03, iridescence: 1, iridescenceIOR: 1.6, sheen: 0.5, sheenColor: new THREE.Color('#ffffff'), envMapIntensity: 1.8 });
+  else if (col === 'fx:neon') m = new THREE.MeshPhysicalMaterial({ color: '#39ff88', emissive: '#1fd66a', emissiveIntensity: 0.85, roughness: 0.3, clearcoat: 1, clearcoatRoughness: 0.1, envMapIntensity: 0.6 });
+  else { m = new THREE.MeshPhysicalMaterial({ color: col === 'fx:rainbow' ? '#ff5a8a' : col, roughness: 0.34, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.12, sheen: 0.6, sheenColor: new THREE.Color('#ffffff'), sheenRoughness: 0.4, envMapIntensity: 0.75 }); if (col === 'fx:rainbow') FX.rainbow = m; }
+  if (col === 'fx:rainbow') { m.onBeforeCompile = rainbowShader; m.customProgramCacheKey = () => 'rimrainbow'; } else { m.onBeforeCompile = rimShader; m.customProgramCacheKey = () => 'rimchar'; }
   return CHAR_MATS[col] = m;
 }
 const GOLD = new THREE.MeshStandardMaterial({ color: 0xffc23d, metalness: 1, roughness: 0.24, envMapIntensity: 1.3 });
@@ -3227,6 +3251,8 @@ function hatParts(hat) {
   if (k === 'witch') return [P(RCYL(0.42, 0.03, 0.014, 30), '#4a148c', [0, 1.6, 0]), P(LA([[0, 0], [0.24, 0], [0.16, 0.22], [0.07, 0.4], [0, 0.48]], 22), '#4a148c', [0, 1.6, 0], 1, [-0.15, 0, 0]), P(LA([[0.242, 0.01], [0.225, 0.06]], 22), '#ff9800', [0, 1.6, 0])];
   if (k === 'space') return [P(RCYL(0.3, 0.06, 0.025, 28), '#90a4ae', [0, 1.06, 0]), P(G.lo, '#ff5252', [0.2, 1.1, 0.2], 0.03)];
   if (k === 'pirate') return [P(LA([[0, 0], [0.33, 0], [0.3, 0.1], [0.15, 0.18], [0, 0.2]], 22), '#212121', [0, 1.57, 0], [1.25, 1, 0.8]), P(G.lo, '#ffffff', [0, 1.7, 0.2], [0.04, 0.04, 0.01])];
+  if (k === 'fire') return [P(RCYL(0.272, 0.07, 0.025, 32), '#ff7043', [0, 1.55, 0]), P(LA([[0.274, 0.0], [0.274, 0.025]], 32), '#ffd23f', [0, 1.575, 0])];
+  if (k === 'unicorn') return [P(LA([[0, 0], [0.085, 0], [0, 0.46]], 20), (x, y, z) => Math.floor(y * 20 + (Math.atan2(z, x) + PI) / TAU * 2) % 2 ? '#ffd54f' : '#ff80ab', [0, 1.665, 0.12], 1, [0.45, 0, 0]), P(RCYL(0.092, 0.035, 0.012, 18), '#b388ff', [0, 1.66, 0.115], 1, [0.45, 0, 0]), ...[-1, 1].flatMap(sx => [P(G.cone, '#ffffff', [sx * 0.18, 1.66, -0.04], [0.055, 0.13, 0.035], [0, 0, -sx * 0.35]), P(G.cone, '#ffb3d9', [sx * 0.178, 1.65, -0.012], [0.03, 0.08, 0.01], [0, 0, -sx * 0.35])])];
   if (k === 'party') return [P(LA([[0, 0], [0.17, 0], [0, 0.42]], 24), (x, y) => Math.floor(y * 14) % 2 ? '#ff4f9a' : '#ffd23f', [0.05, 1.66, 0], 1, [0, 0, -0.18]), P(G.sph, '#3fb6f2', [0.125, 2.075, 0], 0.055), P(LA([[0.172, 0], [0.162, 0.035]], 24), '#3fb6f2', [0.05, 1.66, 0], 1, [0, 0, -0.18])];
   if (k === 'tophat') return [P(RCYL(0.36, 0.025, 0.012, 32), '#212121', [0, 1.615, 0]), P(RCYL(0.225, 0.36, 0.03, 28), '#212121', [0, 1.62, 0]), P(LA([[0.228, 0.03], [0.228, 0.09]], 28), '#e53935', [0, 1.62, 0])];
   if (k === 'chef') return [P(RCYL(0.268, 0.14, 0.03, 28), '#ffffff', [0, 1.56, 0]), P(BLOB(3, 0.12, 7), '#ffffff', [0, 1.8, 0], [0.31, 0.18, 0.31]), P(BLOB(2, 0.15, 8), '#f7f7f7', [0.14, 1.86, 0.08], [0.15, 0.12, 0.15]), P(BLOB(2, 0.15, 9), '#f7f7f7', [-0.13, 1.87, -0.06], [0.15, 0.12, 0.15])];
@@ -3307,7 +3333,8 @@ function figure(col, hat, mat) {
 }
 function addHat(head, hat) {
   const out = [];
-  if (hat && hat !== 'none') { const hm = new THREE.Mesh(hatGeo(hat), MATG); hm.castShadow = true; head.add(hm); out.push(hm); if (hat === 'crown') { const gm = new THREE.Mesh(cached('hatcrownGold', () => { const g = merge(crownGold()); g.translate(0, -HEAD_Y, 0); return g; }), GOLD); gm.castShadow = true; head.add(gm); out.push(gm); } if (hat === 'space') { const gl = new THREE.Mesh(G.hi, HELMET_GLASS); gl.scale.setScalar(0.38); gl.position.y = 1.42 - HEAD_Y; gl.renderOrder = 3; head.add(gl); out.push(gl); } }
+  if (hat === 'halo') { const m = new THREE.Mesh(cached('hathalo', () => { const g = new THREE.TorusGeometry(0.2, 0.035, 12, 40); g.rotateX(PI / 2); g.translate(0, 1.97 - HEAD_Y, 0); return g; }), HALO_MAT); head.add(m); out.push(m); FX.bob = FX.bob.filter(inScene); FX.bob.push(m); return out; }
+  if (hat && hat !== 'none') { const hm = new THREE.Mesh(hatGeo(hat), MATG); hm.castShadow = true; head.add(hm); out.push(hm); if (hat === 'crown') { const gm = new THREE.Mesh(cached('hatcrownGold', () => { const g = merge(crownGold()); g.translate(0, -HEAD_Y, 0); return g; }), GOLD); gm.castShadow = true; head.add(gm); out.push(gm); } if (hat === 'fire') { const fm = new THREE.Mesh(cached('hatflames', () => { const p = []; for (let i = 0; i < 8; i++) { const a = i / 8 * TAU, big = i % 2 === 0; p.push(P(G.cone, (x, y) => y > 0.15 ? '#fff59d' : y > -0.2 ? '#ffb300' : '#ff6d00', [Math.cos(a) * 0.255, big ? 0.13 : 0.09, Math.sin(a) * 0.255], [big ? 0.075 : 0.06, big ? 0.26 : 0.18, big ? 0.075 : 0.06])); } return merge(p); }), MATB); fm.position.y = 1.615 - HEAD_Y; head.add(fm); out.push(fm); FX.flick = FX.flick.filter(inScene); FX.flick.push(fm); } if (hat === 'space') { const gl = new THREE.Mesh(G.hi, HELMET_GLASS); gl.scale.setScalar(0.38); gl.position.y = 1.42 - HEAD_Y; gl.renderOrder = 3; head.add(gl); out.push(gl); } }
   return out;
 }
 const BLUE = '#62c9f5', BLUE_W = '#3aa6ec';
@@ -3607,8 +3634,8 @@ const UPG = [
   { k: 'price', g: 'shop', n: 'Higher Prices', d: l => `Customers pay +${l * 15}%`, ic: 'tag', max: 8, base: 400 },
   { k: 'cust', g: 'shop', n: 'More Customers', d: l => `+${l * 15}% more customers`, ic: 'people', max: 5, base: 450 },
 ];
-const COLORS = [{ id: '#62c9f5', n: 'Sky Blue', p: 0 }, { id: '#2f80ed', n: 'Ocean', p: 300 }, { id: '#4dd0e1', n: 'Ice', p: 400 }, { id: '#9c7cf4', n: 'Galaxy', p: 600 }, { id: '#ff8ac2', n: 'Bubblegum', p: 600 }, { id: '#ff7a59', n: 'Lava', p: 900 }, { id: '#7ed957', n: 'Lime', p: 900 }, { id: '#69f0ae', n: 'Mint', p: 350 }, { id: '#ffab91', n: 'Peach', p: 450 }, { id: '#e53950', n: 'Cherry', p: 700 }, { id: '#c5a3ff', n: 'Lavender', p: 750 }, { id: '#3949ab', n: 'Navy', p: 800 }, { id: '#8d6e63', n: 'Chocolate', p: 1000 }, { id: '#455a64', n: 'Midnight', p: 1200 }, { id: '#cfd8dc', n: 'Silver', p: 1500 }, { id: '#ffc83d', n: 'Gold', p: 3000 }];
-const HATS = [{ id: 'none', n: 'No hat', p: 0 }, { id: 'cap:#e53935', n: 'Red Cap', p: 250 }, { id: 'straw', n: 'Straw Hat', p: 350 }, { id: 'beanie:#3f51b5', n: 'Beanie', p: 400 }, { id: 'helmet', n: 'Hard Hat', p: 500 }, { id: 'bow', n: 'Bow', p: 500 }, { id: 'pirate', n: 'Pirate Hat', p: 800 }, { id: 'witch', n: 'Wizard Hat', p: 1000 }, { id: 'space', n: 'Space Helmet', p: 1500 }, { id: 'cap:#43a047', n: 'Green Cap', p: 300 }, { id: 'cap:#8e24aa', n: 'Purple Cap', p: 300 }, { id: 'beanie:#e91e63', n: 'Pink Beanie', p: 450 }, { id: 'party', n: 'Party Hat', p: 600 }, { id: 'chef', n: 'Chef Hat', p: 700 }, { id: 'cowboy', n: 'Cowboy Hat', p: 900 }, { id: 'tophat', n: 'Top Hat', p: 1200 }, { id: 'viking', n: 'Viking Helmet', p: 2000 }, { id: 'crown', n: 'Crown', p: 5000 }];
+const COLORS = [{ id: '#62c9f5', n: 'Sky Blue', p: 0 }, { id: '#2f80ed', n: 'Ocean', p: 300 }, { id: '#4dd0e1', n: 'Ice', p: 400 }, { id: '#9c7cf4', n: 'Galaxy', p: 600 }, { id: '#ff8ac2', n: 'Bubblegum', p: 600 }, { id: '#ff7a59', n: 'Lava', p: 900 }, { id: '#7ed957', n: 'Lime', p: 900 }, { id: '#69f0ae', n: 'Mint', p: 350 }, { id: '#ffab91', n: 'Peach', p: 450 }, { id: '#e53950', n: 'Cherry', p: 700 }, { id: '#c5a3ff', n: 'Lavender', p: 750 }, { id: '#3949ab', n: 'Navy', p: 800 }, { id: '#8d6e63', n: 'Chocolate', p: 1000 }, { id: '#455a64', n: 'Midnight', p: 1200 }, { id: '#cfd8dc', n: 'Silver', p: 1500 }, { id: '#ffc83d', n: 'Gold', p: 3000 }, { id: 'fx:rainbow', n: 'Rainbow', p: 99999, leg: 1 }, { id: 'fx:diamond', n: 'Diamond', p: 99999, leg: 1 }, { id: 'fx:neon', n: 'Neon', p: 99999, leg: 1 }];
+const HATS = [{ id: 'none', n: 'No hat', p: 0 }, { id: 'cap:#e53935', n: 'Red Cap', p: 250 }, { id: 'straw', n: 'Straw Hat', p: 350 }, { id: 'beanie:#3f51b5', n: 'Beanie', p: 400 }, { id: 'helmet', n: 'Hard Hat', p: 500 }, { id: 'bow', n: 'Bow', p: 500 }, { id: 'pirate', n: 'Pirate Hat', p: 800 }, { id: 'witch', n: 'Wizard Hat', p: 1000 }, { id: 'space', n: 'Space Helmet', p: 1500 }, { id: 'cap:#43a047', n: 'Green Cap', p: 300 }, { id: 'cap:#8e24aa', n: 'Purple Cap', p: 300 }, { id: 'beanie:#e91e63', n: 'Pink Beanie', p: 450 }, { id: 'party', n: 'Party Hat', p: 600 }, { id: 'chef', n: 'Chef Hat', p: 700 }, { id: 'cowboy', n: 'Cowboy Hat', p: 900 }, { id: 'tophat', n: 'Top Hat', p: 1200 }, { id: 'viking', n: 'Viking Helmet', p: 2000 }, { id: 'crown', n: 'Crown', p: 5000 }, { id: 'halo', n: 'Halo', p: 99999, leg: 1 }, { id: 'unicorn', n: 'Unicorn Horn', p: 99999, leg: 1 }, { id: 'fire', n: 'Fire Crown', p: 99999, leg: 1 }];
 const UPG_GROWTH = 2.3;
 const STOCK_COST = [400, 1500, 2500, 5000, 9000, 15000, 24000, 36000];
 const CASH_COST = { kassa1: 300, kassa2: 2500 };
@@ -3688,11 +3715,13 @@ function adoptSave(s, msg) {
 /* ================= sound ================= */
 let AC = null;
 function ac() { try { if (!AC) AC = new (window.AudioContext || window.webkitAudioContext)(); if (AC.state === 'suspended') AC.resume(); } catch (e) { AC = null; } return AC; }
+const sfxVol = () => ({ low: 0.45, mid: 1, high: 1.7 })[save && save.set && save.set.vol] || 1;
+const musVol = () => ({ low: 0.25, mid: 0.55, high: 0.9 })[save && save.set && save.set.mvol] || 0.55;
 function tone(f, dur, type = 'sine', vol = 0.12, f2 = 0, delay = 0) {
   if (!save || !save.sound) return; const a = ac(); if (!a) return;
   const t0 = a.currentTime + delay, o = a.createOscillator(), g = a.createGain();
   o.type = type; o.frequency.setValueAtTime(f, t0); if (f2) o.frequency.exponentialRampToValueAtTime(f2, t0 + dur);
-  g.gain.setValueAtTime(vol, t0); g.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
+  g.gain.setValueAtTime(vol * sfxVol(), t0); g.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
   o.connect(g); g.connect(a.destination); o.start(t0); o.stop(t0 + dur + 0.02);
 }
 let sfxT = 0;
@@ -3731,6 +3760,7 @@ const RES = { scale: 1, ceil: 1, acc: 0, n: 0, hold: 3, upAt: -99 };
 const DESKTOP = !(window.matchMedia && matchMedia('(pointer: coarse)').matches);
 function gfxRatio() {
   const g = save && save.set ? save.set.gfx : 'high', dpr = window.devicePixelRatio || 1;
+  if (save && save.set && save.set.saver) return Math.min(dpr, 1.25);
   if (g === 'ultra') return DESKTOP ? Math.min(2.5, clamp(Math.sqrt(8.3e6 / Math.max(1, vw * vh)), Math.min(dpr, 2), Math.max(dpr, 2))) : Math.min(dpr, 3);
   return Math.min(dpr, g === 'high' ? 3 : g === 'medium' ? 1.5 : 1);
 }
@@ -3811,7 +3841,7 @@ function badgeTex(key, border = '#3ddc84') {
 function sprite(tex, s) { const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, depthWrite: false })); sp.scale.set(s, s, 1); return sp; }
 
 /* ================= language (English / Nederlands) ================= */
-const NL = {"Build the biggest shop in 12 worlds": "Bouw de grootste winkel in 12 werelden", "PLAY": "SPELEN", "RESUME": "VERDER", "Worlds": "Werelden", "Settings": "Instellingen", "VERSION 1.9": "VERSIE 1.9", "Sound": "Geluid", "Sound effects": "Geluidseffecten", "Coins, pops and clicks": "Munten, plopjes en klikjes", "On": "Aan", "Off": "Uit", "Music": "Muziek", "Happy shop tunes": "Vrolijke winkelmuziek", "Vibration": "Trillen", "Buzz when you buy something": "Trilt als je iets koopt", "Screen": "Scherm", "4K is the sharpest picture": "4K is het scherpste beeld", "Low": "Laag", "High": "Hoog", "How far you can see": "Hoe ver je kunt kijken", "Close": "Dichtbij", "Far": "Ver", "Customer bubbles": "Klantwolkjes", "Show what customers want": "Laat zien wat klanten willen", "Show": "Tonen", "Hide": "Verbergen", "Game": "Spel", "Start over": "Opnieuw beginnen", "Erases all worlds, money and hats": "Wist alle werelden, geld en hoeden", "Reset": "Wissen", "Language": "Taal", "English or Dutch": "Engels of Nederlands", "Move: drag your finger across the screen (or use WASD / arrow keys). You can carry different products at the same time. Your game saves by itself all the time.": "Lopen: sleep met je vinger over het scherm (of gebruik WASD / pijltjestoetsen). Je kunt verschillende producten tegelijk dragen. Je spel wordt steeds vanzelf bewaard.", "Colors": "Kleuren", "You are wearing this": "Dit draag je nu", "On ✓": "Aan ✓", "Hats": "Hoeden", "No hat": "Geen hoed", "In your closet": "In je kast", "Wear": "Dragen", "Sky Blue": "Hemelsblauw", "Ocean": "Oceaan", "Ice": "IJs", "Bubblegum": "Kauwgom", "Lime": "Limoen", "Gold": "Goud", "Red Cap": "Rode pet", "Straw Hat": "Strohoed", "Beanie": "Muts", "Hard Hat": "Bouwhelm", "Bow": "Strik", "Pirate Hat": "Piratenhoed", "Wizard Hat": "Tovenaarshoed", "Space Helmet": "Ruimtehelm", "Crown": "Kroon", "You are here": "Je bent hier", "Here": "Hier", "Go": "Ga", "Sunny Beach": "Zonnig Strand", "Snow Village": "Sneeuwdorp", "Big City": "Grote Stad", "Desert Oasis": "Woestijnoase", "Candy Land": "Snoepland", "Fishing Harbor": "Vissershaven", "Spooky Farm": "Spookboerderij", "Moon Base": "Maanbasis", "Walk to the banana tree": "Loop naar de bananenboom", "Put the bananas on the stand": "Leg de bananen in de kraam", "Stand behind the register": "Ga achter de kassa staan", "Pick up your money": "Pak je geld op", "Stand on the square to buy": "Ga op het vierkant staan om te kopen", "Sell more bananas to buy a 2nd tree": "Verkoop meer bananen voor een 2e boom", "Great! Keep growing your shop": "Super! Laat je winkel groeien", "Staff": "Personeel", "Staff keep working, even when you are somewhere else.": "Personeel blijft werken, ook als jij ergens anders bent.", "Hire": "Aannemen", "Hired ✓": "Aangenomen ✓", "Stocker": "Vakkenvuller", "Full ✓": "Vol ✓", "Staff upgrades": "Personeel-upgrades", "Staff Speed": "Snel personeel", "Staff Capacity": "Personeel draagt meer", "Staff Quick Hands": "Snelle handen personeel", "Cashier Speed": "Snelle kassa", "You": "Jij", "Carry Capacity": "Meer dragen", "Fast Shoes": "Snelle schoenen", "Quick Hands": "Snelle handen", "Money Magnet": "Geldmagneet", "Shop": "Winkel", "Faster Growth": "Sneller groeien", "Faster Machines": "Snellere machines", "Higher Prices": "Hogere prijzen", "More Customers": "Meer klanten", "FULL": "VOL", "Rush hour! Lots of customers are coming!": "Spitsuur! Er komen heel veel klanten!", "Double cash! Customers pay double!": "Dubbel geld! Klanten betalen dubbel!", "Turbo! Everyone walks faster!": "Turbo! Iedereen loopt sneller!", "Super harvest! Plants grow super fast!": "Superoogst! Planten groeien supersnel!", "Machine power! Machines work twice as fast!": "Machinekracht! Machines werken twee keer zo snel!", "DRAG TO MOVE": "SLEEP OM TE LOPEN", "Cashier hired!": "Kassamedewerker aangenomen!", "Fresh start!": "Nieuwe start!", "New stocker hired!": "Nieuwe vakkenvuller aangenomen!", "You are the real Shop Boss!": "Jij bent de echte Shop Boss!", "Banana": "Banaan", "Corn": "Maïs", "Apple": "Appel", "Apple Juice": "Appelsap", "Smoothie": "Smoothie", "Milk": "Melk", "Egg": "Ei", "Wheat": "Tarwe", "Pancake": "Pannenkoek", "Bread": "Brood", "Cheese": "Kaas", "Tomato": "Tomaat", "Potato": "Aardappel", "Coffee Beans": "Koffiebonen", "Fries": "Friet", "Coffee": "Koffie", "Orange": "Sinaasappel", "Watermelon": "Watermeloen", "Lemon": "Citroen", "Orange Juice": "Sinaasappelsap", "Lemonade": "Limonade", "Fruit Salad": "Fruitsalade", "Strawberry": "Aardbei", "Cocoa Pod": "Cacaovrucht", "Sugar Cane": "Suikerriet", "Chocolate": "Chocolade", "Lollipop": "Lolly", "Ice Cream": "IJsje", "Fish": "Vis", "Shrimp": "Garnaal", "Rice": "Rijst", "Fried Shrimp": "Gebakken garnalen", "Fish Sticks": "Vissticks", "Pumpkin": "Pompoen", "Grapes": "Druiven", "Mushroom": "Paddenstoel", "Jam": "Jam", "Soup": "Soep", "Pumpkin Pie": "Pompoentaart", "Star Fruit": "Stervrucht", "Crystal": "Kristal", "Cosmic Milk": "Kosmische melk", "Energy Drink": "Energiedrank", "Galaxy Shake": "Galaxy-shake", "Rocket Pop": "Raketijsje", "Popcorn": "Popcorn", "Banana Tree": "Bananenboom", "Corn Field": "Maïsveld", "Apple Tree": "Appelboom", "Cow": "Koe", "Chicken Coop": "Kippenhok", "Wheat Field": "Tarweveld", "Tomato Plant": "Tomatenplant", "Potato Field": "Aardappelveld", "Coffee Bush": "Koffiestruik", "Orange Tree": "Sinaasappelboom", "Melon Patch": "Meloenveld", "Lemon Tree": "Citroenboom", "Strawberry Patch": "Aardbeienveld", "Cocoa Tree": "Cacaoboom", "Sugar Cane Field": "Suikerrietveld", "Fish Pond": "Visvijver", "Shrimp Net": "Garnalennet", "Rice Paddy": "Rijstveld", "Pumpkin Patch": "Pompoenveld", "Grape Vine": "Druivenrank", "Mushroom Log": "Paddenstoelenstam", "Star Plant": "Sterplant", "Crystal Rock": "Kristalrots", "Space Cow": "Ruimtekoe", "Popcorn Machine": "Popcornmachine", "Juicer": "Sapmachine", "Smoothie Bar": "Smoothiebar", "Pancake Griddle": "Pannenkoekbakplaat", "Bakery Oven": "Bakkersoven", "Cheese Maker": "Kaasmaker", "Fryer": "Frituur", "Coffee Bar": "Koffiebar", "Pizza Oven": "Pizzaoven", "Orange Juicer": "Sinaasappelpers", "Lemonade Press": "Limonadepers", "Fruit Chopper": "Fruitsnijder", "Chocolate Vat": "Chocoladeketel", "Candy Maker": "Snoepmaker", "Ice Cream Machine": "IJsmachine", "Shrimp Fryer": "Garnalenbakker", "Sushi Bar": "Sushibar", "Fish Stick Factory": "Visstickfabriek", "Jam Cauldron": "Jamketel", "Soup Cauldron": "Soepketel", "Pie Oven": "Taartoven", "Energy Reactor": "Energiereactor", "Shake Mixer": "Shakemixer", "Rocket Pop Freezer": "Raketijsvriezer", "Golden Statue": "Gouden beeld", "Stand": "kraam", "Shelf": "rek", "Fridge": "koelkast", "Freezer": "vriezer", "Display": "vitrine", "Rack": "rek", "Jungle Camp": "Junglekamp", "Volcano Island": "Vulkaaneiland", "Cloud Kingdom": "Wolkenrijk", "Coral Reef": "Koraalrif", "Coconut": "Kokosnoot", "Mango": "Mango", "Pineapple": "Ananas", "Mango Juice": "Mangosap", "Pineapple Rings": "Ananasschijfjes", "Coconut Cookies": "Kokoskoekjes", "Chili Pepper": "Chilipeper", "Dragon Fruit": "Drakenvrucht", "Dino Egg": "Dino-ei", "Dragon Smoothie": "Drakensmoothie", "Dino Omelette": "Dino-omelet", "Hot Sauce": "Hete saus", "Blueberries": "Bosbessen", "Honey": "Honing", "Peach": "Perzik", "Honey Cake": "Honingtaart", "Peach Tea": "Perzikthee", "Blueberry Muffin": "Bosbessenmuffin", "Seaweed": "Zeewier", "Pearls": "Parels", "Crab": "Krab", "Bubble Tea": "Bubbelthee", "Crab Cake": "Krabkoekje", "Seaweed Snack": "Zeewiersnack", "Coconut Palm": "Kokospalm", "Mango Tree": "Mangoboom", "Pineapple Patch": "Ananasveld", "Chili Plant": "Chiliplant", "Dragon Cactus": "Drakencactus", "Dino Nest": "Dinonest", "Blueberry Bush": "Bosbessenstruik", "Beehive": "Bijenkorf", "Peach Tree": "Perzikboom", "Seaweed Farm": "Zeewierkwekerij", "Oyster Bed": "Oesterbank", "Crab Trap": "Krabbenval", "Mango Press": "Mangopers", "Pineapple Slicer": "Ananassnijder", "Cookie Oven": "Koekjesoven", "Dragon Blender": "Drakenblender", "Lava Grill": "Lavagrill", "Hot Sauce Pot": "Sausketel", "Honey Bakery": "Honingbakkerij", "Tea Maker": "Theemachine", "Muffin Mixer": "Muffinmixer", "Bubble Tea Bar": "Bubbelthee-bar", "Crab Cake Fryer": "Krabkoekjesbakker", "Seaweed Press": "Zeewierpers", "Your progress is back!": "Je voortgang is terug!", "Your shop is waiting": "Je winkel wacht op je", "Travel →": "Reizen →", "Graphics": "Beeldkwaliteit", "Mid": "Midden", "Welcome back!": "Welkom terug!", "Your staff kept selling while you were away.": "Je personeel bleef verkopen terwijl je weg was.", "Collect": "Ophalen", "No ads, no in-app purchases and no tracking.": "Geen reclame, geen aankopen in de app en geen tracking.", "A VIP is here! VIPs pay 3×!": "Er is een VIP! VIP's betalen 3×!", "A gift box fell from the sky!": "Er viel een cadeaudoos uit de lucht!", "Serve a VIP customer": "Help een VIP-klant", "Open a gift box": "Open een cadeaudoos", "Mission complete!": "Opdracht klaar!", "Rush hour": "Spitsuur", "Double cash": "Dubbel geld", "Turbo": "Turbo", "Super harvest": "Superoogst", "Machine power": "Machinekracht", "Mint": "Munt", "Cherry": "Kers", "Lavender": "Lavendel", "Navy": "Marineblauw", "Midnight": "Middernacht", "Silver": "Zilver", "Green Cap": "Groene pet", "Purple Cap": "Paarse pet", "Pink Beanie": "Roze muts", "Party Hat": "Feesthoed", "Chef Hat": "Koksmuts", "Cowboy Hat": "Cowboyhoed", "Top Hat": "Hoge hoed", "Viking Helmet": "Vikinghelm", "Complete missions to win new colors and hats. They stay yours in every world.": "Voltooi opdrachten om nieuwe kleuren en hoeden te winnen. Ze blijven van jou in elke wereld.", "Win it with a mission": "Win dit met een opdracht", "Prize of your mission!": "De prijs van je opdracht!", "Missions": "Opdrachten", "Claim": "Ophalen", "Done! Claim your prize": "Klaar! Haal je prijs op", "Yours now!": "Nu van jou!", "Every color and hat is yours!": "Alle kleuren en hoeden zijn van jou!", "Complete missions to win new colors and hats.": "Voltooi opdrachten om nieuwe kleuren en hoeden te winnen.", "Finish the first steps of the game to start missions.": "Speel eerst de eerste stapjes, dan beginnen de opdrachten.", "Galaxy": "Melkweg", "Lava": "Lava"};
+const NL = {"Build the biggest shop in 12 worlds": "Bouw de grootste winkel in 12 werelden", "PLAY": "SPELEN", "RESUME": "VERDER", "Worlds": "Werelden", "Settings": "Instellingen", "VERSION 1.9": "VERSIE 1.9", "Sound": "Geluid", "Sound effects": "Geluidseffecten", "Coins, pops and clicks": "Munten, plopjes en klikjes", "On": "Aan", "Off": "Uit", "Music": "Muziek", "Happy shop tunes": "Vrolijke winkelmuziek", "Vibration": "Trillen", "Buzz when you buy something": "Trilt als je iets koopt", "Screen": "Scherm", "4K is the sharpest picture": "4K is het scherpste beeld", "Low": "Laag", "High": "Hoog", "How far you can see": "Hoe ver je kunt kijken", "Close": "Dichtbij", "Far": "Ver", "Customer bubbles": "Klantwolkjes", "Show what customers want": "Laat zien wat klanten willen", "Show": "Tonen", "Hide": "Verbergen", "Game": "Spel", "Start over": "Opnieuw beginnen", "Erases all worlds, money and hats": "Wist alle werelden, geld en hoeden", "Reset": "Wissen", "Language": "Taal", "English or Dutch": "Engels of Nederlands", "Move: drag your finger across the screen (or use WASD / arrow keys). You can carry different products at the same time. Your game saves by itself all the time.": "Lopen: sleep met je vinger over het scherm (of gebruik WASD / pijltjestoetsen). Je kunt verschillende producten tegelijk dragen. Je spel wordt steeds vanzelf bewaard.", "Colors": "Kleuren", "You are wearing this": "Dit draag je nu", "On ✓": "Aan ✓", "Hats": "Hoeden", "No hat": "Geen hoed", "In your closet": "In je kast", "Wear": "Dragen", "Sky Blue": "Hemelsblauw", "Ocean": "Oceaan", "Ice": "IJs", "Bubblegum": "Kauwgom", "Lime": "Limoen", "Gold": "Goud", "Red Cap": "Rode pet", "Straw Hat": "Strohoed", "Beanie": "Muts", "Hard Hat": "Bouwhelm", "Bow": "Strik", "Pirate Hat": "Piratenhoed", "Wizard Hat": "Tovenaarshoed", "Space Helmet": "Ruimtehelm", "Crown": "Kroon", "You are here": "Je bent hier", "Here": "Hier", "Go": "Ga", "Sunny Beach": "Zonnig Strand", "Snow Village": "Sneeuwdorp", "Big City": "Grote Stad", "Desert Oasis": "Woestijnoase", "Candy Land": "Snoepland", "Fishing Harbor": "Vissershaven", "Spooky Farm": "Spookboerderij", "Moon Base": "Maanbasis", "Walk to the banana tree": "Loop naar de bananenboom", "Put the bananas on the stand": "Leg de bananen in de kraam", "Stand behind the register": "Ga achter de kassa staan", "Pick up your money": "Pak je geld op", "Stand on the square to buy": "Ga op het vierkant staan om te kopen", "Sell more bananas to buy a 2nd tree": "Verkoop meer bananen voor een 2e boom", "Great! Keep growing your shop": "Super! Laat je winkel groeien", "Staff": "Personeel", "Staff keep working, even when you are somewhere else.": "Personeel blijft werken, ook als jij ergens anders bent.", "Hire": "Aannemen", "Hired ✓": "Aangenomen ✓", "Stocker": "Vakkenvuller", "Full ✓": "Vol ✓", "Staff upgrades": "Personeel-upgrades", "Staff Speed": "Snel personeel", "Staff Capacity": "Personeel draagt meer", "Staff Quick Hands": "Snelle handen personeel", "Cashier Speed": "Snelle kassa", "You": "Jij", "Carry Capacity": "Meer dragen", "Fast Shoes": "Snelle schoenen", "Quick Hands": "Snelle handen", "Money Magnet": "Geldmagneet", "Shop": "Winkel", "Faster Growth": "Sneller groeien", "Faster Machines": "Snellere machines", "Higher Prices": "Hogere prijzen", "More Customers": "Meer klanten", "FULL": "VOL", "Rush hour! Lots of customers are coming!": "Spitsuur! Er komen heel veel klanten!", "Double cash! Customers pay double!": "Dubbel geld! Klanten betalen dubbel!", "Turbo! Everyone walks faster!": "Turbo! Iedereen loopt sneller!", "Super harvest! Plants grow super fast!": "Superoogst! Planten groeien supersnel!", "Machine power! Machines work twice as fast!": "Machinekracht! Machines werken twee keer zo snel!", "DRAG TO MOVE": "SLEEP OM TE LOPEN", "Cashier hired!": "Kassamedewerker aangenomen!", "Fresh start!": "Nieuwe start!", "New stocker hired!": "Nieuwe vakkenvuller aangenomen!", "You are the real Shop Boss!": "Jij bent de echte Shop Boss!", "Banana": "Banaan", "Corn": "Maïs", "Apple": "Appel", "Apple Juice": "Appelsap", "Smoothie": "Smoothie", "Milk": "Melk", "Egg": "Ei", "Wheat": "Tarwe", "Pancake": "Pannenkoek", "Bread": "Brood", "Cheese": "Kaas", "Tomato": "Tomaat", "Potato": "Aardappel", "Coffee Beans": "Koffiebonen", "Fries": "Friet", "Coffee": "Koffie", "Orange": "Sinaasappel", "Watermelon": "Watermeloen", "Lemon": "Citroen", "Orange Juice": "Sinaasappelsap", "Lemonade": "Limonade", "Fruit Salad": "Fruitsalade", "Strawberry": "Aardbei", "Cocoa Pod": "Cacaovrucht", "Sugar Cane": "Suikerriet", "Chocolate": "Chocolade", "Lollipop": "Lolly", "Ice Cream": "IJsje", "Fish": "Vis", "Shrimp": "Garnaal", "Rice": "Rijst", "Fried Shrimp": "Gebakken garnalen", "Fish Sticks": "Vissticks", "Pumpkin": "Pompoen", "Grapes": "Druiven", "Mushroom": "Paddenstoel", "Jam": "Jam", "Soup": "Soep", "Pumpkin Pie": "Pompoentaart", "Star Fruit": "Stervrucht", "Crystal": "Kristal", "Cosmic Milk": "Kosmische melk", "Energy Drink": "Energiedrank", "Galaxy Shake": "Galaxy-shake", "Rocket Pop": "Raketijsje", "Popcorn": "Popcorn", "Banana Tree": "Bananenboom", "Corn Field": "Maïsveld", "Apple Tree": "Appelboom", "Cow": "Koe", "Chicken Coop": "Kippenhok", "Wheat Field": "Tarweveld", "Tomato Plant": "Tomatenplant", "Potato Field": "Aardappelveld", "Coffee Bush": "Koffiestruik", "Orange Tree": "Sinaasappelboom", "Melon Patch": "Meloenveld", "Lemon Tree": "Citroenboom", "Strawberry Patch": "Aardbeienveld", "Cocoa Tree": "Cacaoboom", "Sugar Cane Field": "Suikerrietveld", "Fish Pond": "Visvijver", "Shrimp Net": "Garnalennet", "Rice Paddy": "Rijstveld", "Pumpkin Patch": "Pompoenveld", "Grape Vine": "Druivenrank", "Mushroom Log": "Paddenstoelenstam", "Star Plant": "Sterplant", "Crystal Rock": "Kristalrots", "Space Cow": "Ruimtekoe", "Popcorn Machine": "Popcornmachine", "Juicer": "Sapmachine", "Smoothie Bar": "Smoothiebar", "Pancake Griddle": "Pannenkoekbakplaat", "Bakery Oven": "Bakkersoven", "Cheese Maker": "Kaasmaker", "Fryer": "Frituur", "Coffee Bar": "Koffiebar", "Pizza Oven": "Pizzaoven", "Orange Juicer": "Sinaasappelpers", "Lemonade Press": "Limonadepers", "Fruit Chopper": "Fruitsnijder", "Chocolate Vat": "Chocoladeketel", "Candy Maker": "Snoepmaker", "Ice Cream Machine": "IJsmachine", "Shrimp Fryer": "Garnalenbakker", "Sushi Bar": "Sushibar", "Fish Stick Factory": "Visstickfabriek", "Jam Cauldron": "Jamketel", "Soup Cauldron": "Soepketel", "Pie Oven": "Taartoven", "Energy Reactor": "Energiereactor", "Shake Mixer": "Shakemixer", "Rocket Pop Freezer": "Raketijsvriezer", "Golden Statue": "Gouden beeld", "Stand": "kraam", "Shelf": "rek", "Fridge": "koelkast", "Freezer": "vriezer", "Display": "vitrine", "Rack": "rek", "Jungle Camp": "Junglekamp", "Volcano Island": "Vulkaaneiland", "Cloud Kingdom": "Wolkenrijk", "Coral Reef": "Koraalrif", "Coconut": "Kokosnoot", "Mango": "Mango", "Pineapple": "Ananas", "Mango Juice": "Mangosap", "Pineapple Rings": "Ananasschijfjes", "Coconut Cookies": "Kokoskoekjes", "Chili Pepper": "Chilipeper", "Dragon Fruit": "Drakenvrucht", "Dino Egg": "Dino-ei", "Dragon Smoothie": "Drakensmoothie", "Dino Omelette": "Dino-omelet", "Hot Sauce": "Hete saus", "Blueberries": "Bosbessen", "Honey": "Honing", "Peach": "Perzik", "Honey Cake": "Honingtaart", "Peach Tea": "Perzikthee", "Blueberry Muffin": "Bosbessenmuffin", "Seaweed": "Zeewier", "Pearls": "Parels", "Crab": "Krab", "Bubble Tea": "Bubbelthee", "Crab Cake": "Krabkoekje", "Seaweed Snack": "Zeewiersnack", "Coconut Palm": "Kokospalm", "Mango Tree": "Mangoboom", "Pineapple Patch": "Ananasveld", "Chili Plant": "Chiliplant", "Dragon Cactus": "Drakencactus", "Dino Nest": "Dinonest", "Blueberry Bush": "Bosbessenstruik", "Beehive": "Bijenkorf", "Peach Tree": "Perzikboom", "Seaweed Farm": "Zeewierkwekerij", "Oyster Bed": "Oesterbank", "Crab Trap": "Krabbenval", "Mango Press": "Mangopers", "Pineapple Slicer": "Ananassnijder", "Cookie Oven": "Koekjesoven", "Dragon Blender": "Drakenblender", "Lava Grill": "Lavagrill", "Hot Sauce Pot": "Sausketel", "Honey Bakery": "Honingbakkerij", "Tea Maker": "Theemachine", "Muffin Mixer": "Muffinmixer", "Bubble Tea Bar": "Bubbelthee-bar", "Crab Cake Fryer": "Krabkoekjesbakker", "Seaweed Press": "Zeewierpers", "Your progress is back!": "Je voortgang is terug!", "Your shop is waiting": "Je winkel wacht op je", "Travel →": "Reizen →", "Graphics": "Beeldkwaliteit", "Mid": "Midden", "Welcome back!": "Welkom terug!", "Your staff kept selling while you were away.": "Je personeel bleef verkopen terwijl je weg was.", "Collect": "Ophalen", "No ads, no in-app purchases and no tracking.": "Geen reclame, geen aankopen in de app en geen tracking.", "A VIP is here! VIPs pay 3×!": "Er is een VIP! VIP's betalen 3×!", "A gift box fell from the sky!": "Er viel een cadeaudoos uit de lucht!", "Serve a VIP customer": "Help een VIP-klant", "Open a gift box": "Open een cadeaudoos", "Mission complete!": "Opdracht klaar!", "Rush hour": "Spitsuur", "Double cash": "Dubbel geld", "Turbo": "Turbo", "Super harvest": "Superoogst", "Machine power": "Machinekracht", "Mint": "Munt", "Cherry": "Kers", "Lavender": "Lavendel", "Navy": "Marineblauw", "Midnight": "Middernacht", "Silver": "Zilver", "Green Cap": "Groene pet", "Purple Cap": "Paarse pet", "Pink Beanie": "Roze muts", "Party Hat": "Feesthoed", "Chef Hat": "Koksmuts", "Cowboy Hat": "Cowboyhoed", "Top Hat": "Hoge hoed", "Viking Helmet": "Vikinghelm", "Complete missions to win new colors and hats. They stay yours in every world.": "Voltooi opdrachten om nieuwe kleuren en hoeden te winnen. Ze blijven van jou in elke wereld.", "Win it with a mission": "Win dit met een opdracht", "Prize of your mission!": "De prijs van je opdracht!", "Missions": "Opdrachten", "Claim": "Ophalen", "Done! Claim your prize": "Klaar! Haal je prijs op", "Yours now!": "Nu van jou!", "Every color and hat is yours!": "Alle kleuren en hoeden zijn van jou!", "Complete missions to win new colors and hats.": "Voltooi opdrachten om nieuwe kleuren en hoeden te winnen.", "Finish the first steps of the game to start missions.": "Speel eerst de eerste stapjes, dan beginnen de opdrachten.", "Galaxy": "Melkweg", "Lava": "Lava", "Rainbow": "Regenboog", "Diamond": "Diamant", "Neon": "Neon", "Halo": "Aureool", "Unicorn Horn": "Eenhoornhoorn", "Fire Crown": "Vuurkroon", "Common": "Gewoon", "Rare": "Zeldzaam", "Epic": "Episch", "Legendary": "Legendarisch", "Win it with a legendary mission": "Win dit met een legendarische opdracht", "Effects volume": "Volume effecten", "How loud the sounds are": "Hoe hard de geluiden zijn", "Music volume": "Volume muziek", "How loud the music is": "Hoe hard de muziek is", "Battery saver": "Batterijbesparing", "Smoother on old phones, uses less battery": "Soepeler op oude telefoons, spaart je batterij", "Shadows": "Schaduwen", "Turn off for more speed": "Zet uit voor meer snelheid", "Screen shake": "Scherm schudden", "When things drop in the shop": "Als er iets in de winkel valt", "Controls": "Besturing", "Joystick size": "Grootte joystick", "The circle under your finger": "De cirkel onder je vinger", "Buttons": "Knoppen", "Left or right side of the screen": "Links of rechts op het scherm", "Small": "Klein", "Big": "Groot", "Left": "Links", "Right": "Rechts", "Skins": "Skins"};
 const NL_RX = [
   [/^Serve (\d+) VIP customers$/, m => 'Help ' + m[1] + ' VIP-klanten'],
   [/^(\d+)\/(\d+) collected$/, m => m[1] + '/' + m[2] + ' verzameld'],
@@ -3901,6 +3931,9 @@ function buildIcons() {
   ICON_DEF['coral'] = () => { const sv = seed; renderIcon('coral', meshOf([P(BLOB(2, 0.2, 7), '#c2b59b', [0, 0, 0], [0.5, 0.15, 0.4]), ...[0, 1, 2, 3, 4].flatMap(k => { const a = k / 5 * TAU, h = 0.6 + (k % 3) * 0.2; return [P(TT([[0, 0.05, 0], [Math.cos(a) * 0.15, h * 0.5, Math.sin(a) * 0.15], [Math.cos(a) * 0.32, h, Math.sin(a) * 0.32]], u => 0.07 - u * 0.03, { ts: 8, rs: 8 }), '#ff7043'), P(G.lo, '#ff7043', [Math.cos(a) * 0.32, h, Math.sin(a) * 0.32], 0.05)]; }), P(EXT(starShape(0.18, 0.08), 0.04, 0.02, 8), '#ffca28', [0.36, 0.1, 0.3], 1, [-1.2, 0, 0.3])]), [0.4, 0.45, 1]); seed = sv; };
   for (const x of COLORS) ICON_DEF['c_' + x.id] = () => lookRender('c', x.id, 'c_' + x.id);
   for (const x of HATS) ICON_DEF['h_' + x.id] = () => lookRender('h', x.id, 'h_' + x.id);
+  ICON_DEF['battery'] = () => { const sv = seed; renderIcon('battery', meshOf([P(RB(0.42, 0.72, 0.2, 0.06), '#37474f'), P(RB(0.16, 0.08, 0.12, 0.03), '#37474f', [0, 0.39, 0]), P(RB(0.32, 0.42, 0.21, 0.04), '#3ddc84', [0, -0.1, 0]), P(EXT((() => { const z = new THREE.Shape(); [[0.03, 0.14], [-0.07, -0.01], [-0.01, -0.01], [-0.05, -0.14], [0.08, 0.03], [0.02, 0.03], [0.07, 0.14]].forEach(([x, y], i) => i ? z.lineTo(x, y) : z.moveTo(x, y)); z.closePath(); return z; })(), 0.02, 0.008, 4), '#ffffff', [0, 0.02, 0.12])]), [0.15, 0.2, 1]); seed = sv; };
+  ICON_DEF['shadow'] = () => { const sv = seed; renderIcon('shadow', meshOf([P(G.hi, '#ffb74d', [0, 0.32, 0], 0.26), P(RCYL(0.42, 0.015, 0.006, 32), '#455a64', [0.16, 0, -0.02], [1, 1, 0.55])]), [0.3, 0.55, 1]); seed = sv; };
+  ICON_DEF['joy'] = () => { const sv = seed; renderIcon('joy', meshOf([P(RCYL(0.46, 0.08, 0.04, 36), '#cfd8dc'), P(RCYL(0.4, 0.085, 0.03, 36), '#eceff1'), P(G.hi, '#3fb6f2', [0.14, 0.18, -0.08], 0.2)]), [0.2, 0.9, 1]); seed = sv; };
   ICON_DEF['quest'] = () => { const sv = seed; renderIcon('quest', meshOf([P(RB(0.7, 0.9, 0.08, 0.06), '#a1724a'), P(RB(0.58, 0.74, 0.03, 0.03), '#ffffff', [0, -0.03, 0.05]), P(RB(0.3, 0.12, 0.08, 0.03), '#b0bec5', [0, 0.45, 0.06]), ...[0.18, -0.03, -0.24].flatMap((y, i) => [P(TT([[-0.22, y, 0.075], [-0.18, y - 0.05, 0.075], [-0.1, y + 0.06, 0.075]], () => 0.022, { ts: 6, rs: 6 }), i < 2 ? '#2ecc71' : '#cfd8dc'), P(RB(0.22, 0.04, 0.02, 0.012), '#9fb3c4', [0.08, y, 0.07])])]), [0.2, 0.25, 1]); seed = sv; };
   ICON_DEF['gift'] = () => { const sv = seed; renderIcon('gift', new THREE.Mesh(giftGeo(0), MATG), [0.5, 0.6, 1]); seed = sv; };
   ICON_DEF['rocket'] = () => { const sv = seed; renderIcon('rocket', meshOf(rocketParts(0, 0, 1), false), [0.5, 0.3, 1]); seed = sv; };
@@ -4380,34 +4413,36 @@ function openGift(g) {
 }
 const MIS_TXT = { sell: m => `Sell ${m.n} ${PROD[m.p].n}`, serve: m => `Serve ${m.n} customers`, earn: m => `Earn ${fmt(m.n)} in sales`, gift: m => m.n > 1 ? `Open ${m.n} gift boxes` : 'Open a gift box', vip: m => m.n > 1 ? `Serve ${m.n} VIP customers` : 'Serve a VIP customer' };
 const misIcon = m => m.t === 'sell' ? m.p : m.t === 'serve' ? 'people' : m.t === 'earn' ? 'cash' : m.t === 'gift' ? 'gift' : lookIcon('h', 'crown');
-function pickReward(list) {
-  const taken = new Set((list || []).map(m => m.rw));
-  const left = [...COLORS.map(x => ['c', x]), ...HATS.map(x => ['h', x])].filter(([k, x]) => !save.owned[k + '|' + x.id]).sort((a, b) => a[1].p - b[1].p);
-  if (!left.length) return 'star';
+function pickReward(list, leg = false) {
+  const taken = new Set((list || []).map(m => m.rw)), all = [...COLORS.map(x => ['c', x]), ...HATS.map(x => ['h', x])].filter(([k, x]) => !save.owned[k + '|' + x.id]);
+  let left = all.filter(([k, x]) => !!x.leg === leg); if (!left.length && !leg) left = all; if (!left.length) return 'star';
+  left.sort((a, b) => a[1].p - b[1].p);
   const free = left.filter(([k, x]) => !taken.has(k + '|' + x.id)), [k, x] = pick((free.length ? free : left).slice(0, 3)); return k + '|' + x.id;
 }
+const legLeft = () => [...COLORS.map(x => ['c', x]), ...HATS.map(x => ['h', x])].some(([k, x]) => x.leg && !save.owned[k + '|' + x.id]);
 const rewardIcon = rw => { if (!rw || rw === 'star') return 'trophy'; const [k, id] = rw.split('|'); return lookIcon(k, id); };
 function newMission(list = []) {
   const prods = shelves.map(s => s.port.p); if (!prods.length) return null;
   const used = new Set(list.map(m => m.t)), usedP = new Set(list.map(m => m.p));
-  let types = ['sell', 'sell', 'serve', 'earn', 'gift', 'vip'].filter(t => !used.has(t)); if (!types.length) types = ['sell', 'serve'];
+  const leg = legLeft() && !list.some(m => m.leg) && Math.random() < 0.1, D = Math.min(2.5, 1 + (save.missions || 0) * 0.04) * (leg ? 2 : 1), extra = Math.floor((D - 1) * 2);
+  let types = (leg ? ['sell', 'serve', 'earn'] : ['sell', 'sell', 'serve', 'earn', 'gift', 'vip']).filter(t => !used.has(t)); if (!types.length) types = ['sell', 'serve'];
   const t = pick(types); let m;
-  if (t === 'sell') { const fresh = prods.filter(p => !usedP.has(p)); m = { t, p: pick(fresh.length ? fresh : prods), n: randi(15, 35) }; }
-  else if (t === 'serve') m = { t, n: randi(15, 30) };
-  else if (t === 'earn') { const avg = prods.reduce((a, p) => a + priceOf(p), 0) / prods.length; m = { t, n: Math.max(30, Math.round(avg * rand(60, 120) * 0.8 * diffPay() * (1 + lvl('price') * 0.15))) }; }
-  else if (t === 'gift') m = { t, n: randi(2, 3) };
-  else m = { t: 'vip', n: randi(2, 3) };
-  m.c = 0; m.rw = pickReward(list); return m;
+  if (t === 'sell') { const fresh = prods.filter(p => !usedP.has(p)); m = { t, p: pick(fresh.length ? fresh : prods), n: Math.round(randi(25, 50) * D) }; }
+  else if (t === 'serve') m = { t, n: Math.round(randi(25, 45) * D) };
+  else if (t === 'earn') { const avg = prods.reduce((a, p) => a + priceOf(p), 0) / prods.length; m = { t, n: Math.max(50, Math.round(avg * rand(120, 220) * D * 0.8 * diffPay() * (1 + lvl('price') * 0.15))) }; }
+  else if (t === 'gift') m = { t, n: randi(3, 4) + extra };
+  else m = { t: 'vip', n: randi(3, 5) + extra };
+  m.c = 0; if (leg) m.leg = 1; m.rw = pickReward(list, leg); return m;
 }
 function refillMissions() {
   if ('mis' in ws) { if (!ws.missions) ws.missions = ws.mis && !ws.mis.done ? [ws.mis] : []; delete ws.mis; }
   ws.missions = (ws.missions || []).filter(m => !m.claimed);
-  for (const m of ws.missions) if (!m.done && (!m.rw || (m.rw !== 'star' && save.owned[m.rw]))) m.rw = pickReward(ws.missions.filter(o => o !== m));
+  for (const m of ws.missions) if (!m.done && (!m.rw || (m.rw !== 'star' && save.owned[m.rw]))) m.rw = pickReward(ws.missions.filter(o => o !== m), !!m.leg);
   while (ws.missions.length < 3) { const m = newMission(ws.missions); if (!m) break; ws.missions.push(m); }
 }
 function giveReward(m) {
   save.missions = (save.missions || 0) + 1;
-  const key = m.rw && m.rw !== 'star' && !save.owned[m.rw] ? m.rw : pickReward();
+  const key = m.rw && m.rw !== 'star' && !save.owned[m.rw] ? m.rw : pickReward([], !!m.leg);
   m.claimed = true; m.rw = key; if (key !== 'star') save.owned[key] = 1; return key;
 }
 function misProgress(t, amt, p) {
@@ -4845,6 +4880,12 @@ function loadWorld(i) {
 /* ================= input ================= */
 const joy = { id: null, ox: 0, oy: 0, x: 0, y: 0 }, keys = {};
 const joyEl = $('#joy'), knob = $('#knob');
+let JOYF = 1;
+function applyControls() {
+  if (!save || !save.set) return; JOYF = ({ small: 0.8, mid: 1, big: 1.25 })[save.set.joy] || 1;
+  const j = $('#joy'), k = $('#knob'); j.style.width = j.style.height = 118 * JOYF + 'px'; j.style.margin = `${-59 * JOYF}px 0 0 ${-59 * JOYF}px`; k.style.width = k.style.height = 54 * JOYF + 'px'; k.style.margin = -27 * JOYF + 'px';
+  document.body.classList.toggle('left-hand', save.set.side === 'left');
+}
 let moved = false;
 renderer.domElement.addEventListener('pointerdown', e => {
   ac(); startMusic(); if (joy.id !== null) return; joy.id = e.pointerId; joy.ox = e.clientX; joy.oy = e.clientY; joy.x = joy.y = 0;
@@ -4854,7 +4895,7 @@ renderer.domElement.addEventListener('pointerdown', e => {
 });
 window.addEventListener('pointermove', e => {
   if (e.pointerId !== joy.id) return;
-  let dx = e.clientX - joy.ox, dy = e.clientY - joy.oy; const d = Math.hypot(dx, dy), R = 52;
+  let dx = e.clientX - joy.ox, dy = e.clientY - joy.oy; const d = Math.hypot(dx, dy), R = 52 * JOYF;
   if (d > R) { joy.ox = e.clientX - dx / d * R; joy.oy = e.clientY - dy / d * R; dx = dx / d * R; dy = dy / d * R; joyEl.style.left = joy.ox + 'px'; joyEl.style.top = joy.oy + 'px'; }
   joy.x = dx / R; joy.y = dy / R; knob.style.transform = `translate(${dx}px,${dy}px)`;
 });
@@ -4982,7 +5023,7 @@ function updCamera(dt, snap) {
   const asp = vw / vh, H = clamp(11.5 / asp, 13.5, 23.5) * ({ close: 0.78, normal: 1, far: 1.28 }[save.set.zoom] || 1), dist = H / (2 * Math.tan(camera.fov * PI / 360)), ang = 0.98;
   const lead = player.moving ? 0.9 : 0, tx = player.pos.x + Math.sin(player.yaw) * lead, tz = player.pos.z - 0.6 + Math.cos(player.yaw) * lead;
   if (snap) camT.set(tx, 0, tz); else { const k = Math.min(1, dt * 5); camT.x += (tx - camT.x) * k; camT.z += (tz - camT.z) * k; }
-  let sx = 0, sz = 0; if (shakeT > 0) { shakeT -= dt; sx = rand(-1, 1) * shakeT * 0.5; sz = rand(-1, 1) * shakeT * 0.5; }
+  let sx = 0, sz = 0; if (shakeT > 0) { shakeT -= dt; if (save.set.shake !== false) { sx = rand(-1, 1) * shakeT * 0.5; sz = rand(-1, 1) * shakeT * 0.5; } }
   camera.position.set(camT.x + sx, Math.sin(ang) * dist, camT.z + Math.cos(ang) * dist + sz); camera.lookAt(camT.x + sx, 0.6, camT.z + sz);
   sun.position.set(camT.x + 7, 16, camT.z + 6); sun.target.position.set(camT.x, 0, camT.z);
 }
@@ -5002,13 +5043,17 @@ const stockCost = () => Math.round(STOCK_COST[ws.stock] * W.mul * diffCost());
 const buyBtn = (act, price, arg = '') => `<button type="button" class="buy" data-act="${act}" data-arg="${arg}" data-price="${price}" ${ws.money >= price ? '' : 'disabled'}>${ic('cash')}${fmt(price)}</button>`;
 const lockBtn = () => `<button type="button" class="buy" disabled>${ic('lock')}</button>`;
 const okBtn = t => `<button type="button" class="buy ok" disabled>${t}</button>`;
-const row = (icon, title, sub, btn, extra = '') => `<div class="row"><div class="ic">${ic(icon, '')}</div><div class="tx"><b>${title}</b><span>${sub}</span>${extra}</div>${btn}</div>`;
+const row = (icon, title, sub, btn, extra = '', cls = '') => `<div class="row ${cls}"><div class="ic">${ic(icon, '')}</div><div class="tx"><b>${title}</b><span>${sub}</span>${extra}</div>${btn}</div>`;
 const upgRow = u => { const l = lvl(u.k), mx = l >= u.max, pips = Array.from({ length: u.max }, (_, i) => `<i class="${i < l ? 'on' : ''}"></i>`).join(''); return row(u.ic, u.n, u.d(mx ? l : l + 1), mx ? okBtn('MAX') : buyBtn('upg', upgCost(u.base, l), u.k), `<div class="pips">${pips}</div>`); };
 const seg = (k, opts, cur) => `<div class="seg">${opts.map(([v, t]) => `<button type="button" data-act="set" data-k="${k}" data-v="${v}" class="${String(cur) === String(v) ? 'on' : ''}">${t}</button>`).join('')}</div>`;
+const RAR_N = { common: 'Common', rare: 'Rare', epic: 'Epic', legendary: 'Legendary' };
+const rarity = x => x.leg ? 'legendary' : x.p >= 1500 ? 'epic' : x.p >= 600 ? 'rare' : 'common';
+const rarPill = r => `<i class="rar ${r}">${RAR_N[r]}</i>`;
 function lookRow(kind, x) {
   const key = kind + '|' + x.id, owned = !!save.owned[key], on = kind === 'c' ? save.look.c === x.id : save.look.h === x.id;
   const btn = on ? okBtn('On ✓') : owned ? `<button type="button" class="buy wear" data-act="wear" data-arg="${key}">Wear</button>` : lockBtn();
-  return row(lookIcon(kind, x.id), x.n, on ? 'You are wearing this' : owned ? 'In your closet' : (ws.missions || []).some(m => m.rw === key && !m.claimed) ? 'Prize of your mission!' : 'Win it with a mission', btn);
+  const r = rarity(x);
+  return row(lookIcon(kind, x.id), x.n + rarPill(r), on ? 'You are wearing this' : owned ? 'In your closet' : (ws.missions || []).some(m => m.rw === key && !m.claimed) ? 'Prize of your mission!' : x.leg ? 'Win it with a legendary mission' : 'Win it with a mission', btn, '', x.leg ? 'leg' : '');
 }
 function renderPanel() {
   const b = $('#pBody'); let h = '';
@@ -5029,8 +5074,8 @@ function renderPanel() {
           h += row(rewardIcon(m.rw), x.n, 'Yours now!', on ? okBtn('On ✓') : `<button type="button" class="buy wear" data-act="wear" data-arg="${m.rw}">Wear</button>`); return;
         }
         const cnt = m.t === 'earn' ? `${fmt(m.c)}/${fmt(m.n)}` : `${Math.floor(m.c)}/${m.n}`;
-        const btn = m.done ? `<button type="button" class="buy claim" data-act="claim" data-arg="${i}">${ic(rewardIcon(m.rw))}Claim</button>` : `<div class="prize">${ic(rewardIcon(m.rw))}</div>`;
-        h += row(misIcon(m), MIS_TXT[m.t](m), m.done ? 'Done! Claim your prize' : cnt, btn, `<div class="mbar"><i style="width:${Math.round(m.c / m.n * 100)}%"></i></div>`);
+        const btn = m.done ? `<button type="button" class="buy claim" data-act="claim" data-arg="${i}">${ic(rewardIcon(m.rw))}Claim</button>` : `<div class="prize${m.leg ? ' leg' : ''}">${ic(rewardIcon(m.rw))}</div>`;
+        h += row(misIcon(m), MIS_TXT[m.t](m) + (m.leg ? rarPill('legendary') : ''), m.done ? 'Done! Claim your prize' : cnt, btn, `<div class="mbar"><i style="width:${Math.round(m.c / m.n * 100)}%"></i></div>`, m.leg ? 'leg' : '');
       });
       h += `<p class="note">${got}/${all} collected</p>`;
     }
@@ -5038,8 +5083,9 @@ function renderPanel() {
     $('#pTitle').textContent = 'Skins';
     const all = COLORS.length + HATS.length, got = COLORS.filter(x => save.owned['c|' + x.id]).length + HATS.filter(x => save.owned['h|' + x.id]).length;
     h += `<p class="note">Complete missions to win new colors and hats. They stay yours in every world.</p><p class="note">${got}/${all} collected</p>`;
-    h += `<div class="sec">Colors</div>`; for (const x of COLORS) h += lookRow('c', x);
-    h += `<div class="sec">Hats</div>`; for (const x of HATS) h += lookRow('h', x);
+    h += `<div class="sec">Colors</div>`; for (const x of COLORS) if (!x.leg) h += lookRow('c', x);
+    h += `<div class="sec">Hats</div>`; for (const x of HATS) if (!x.leg) h += lookRow('h', x);
+    h += `<div class="sec">Legendary</div>`; for (const x of COLORS) if (x.leg) h += lookRow('c', x); for (const x of HATS) if (x.leg) h += lookRow('h', x);
   } else if (panelKind === 'staff') {
     $('#pTitle').textContent = 'Staff';
     h += `<p class="note">Staff keep working, even when you are somewhere else.</p><div class="sec">Hire</div>`;
@@ -5063,13 +5109,21 @@ function renderPanel() {
     const S = save.set, onoff = [['1', 'On'], ['0', 'Off']];
     h += `<div class="sec">Sound</div>`;
     h += row('speaker', 'Sound effects', 'Coins, pops and clicks', seg('sound', onoff, save.sound ? 1 : 0));
+    h += row('speaker', 'Effects volume', 'How loud the sounds are', seg('vol', [['low', 'Low'], ['mid', 'Mid'], ['high', 'High']], S.vol));
     h += row('note', 'Music', 'Happy shop tunes', seg('music', onoff, S.music ? 1 : 0));
+    h += row('note', 'Music volume', 'How loud the music is', seg('mvol', [['low', 'Low'], ['mid', 'Mid'], ['high', 'High']], S.mvol));
     h += row('vibrate', 'Vibration', 'Buzz when you buy something', seg('vib', onoff, S.vib ? 1 : 0));
     h += `<div class="sec">Screen</div>`;
     h += row('globe', 'Language', 'English or Dutch', seg('lang', [['en', 'English'], ['nl', 'Nederlands']], S.lang || 'en'));
     h += row('gfx', 'Graphics', '4K is the sharpest picture', seg('gfx', [['low', 'Low'], ['medium', 'Mid'], ['high', 'High'], ['ultra', '4K']], S.gfx));
+    h += row('battery', 'Battery saver', 'Smoother on old phones, uses less battery', seg('saver', onoff, S.saver ? 1 : 0));
+    h += row('shadow', 'Shadows', 'Turn off for more speed', seg('shadows', onoff, S.shadows !== false ? 1 : 0));
     h += row('camera', 'Camera', 'How far you can see', seg('zoom', [['close', 'Close'], ['normal', 'Mid'], ['far', 'Far']], S.zoom));
     h += row('bubble', 'Customer bubbles', 'Show what customers want', seg('bubbles', [['1', 'Show'], ['0', 'Hide']], S.bubbles ? 1 : 0));
+    h += row('vibrate', 'Screen shake', 'When things drop in the shop', seg('shake', onoff, S.shake !== false ? 1 : 0));
+    h += `<div class="sec">Controls</div>`;
+    h += row('joy', 'Joystick size', 'The circle under your finger', seg('joy', [['small', 'Small'], ['mid', 'Mid'], ['big', 'Big']], S.joy));
+    h += row('hand', 'Buttons', 'Left or right side of the screen', seg('side', [['left', 'Left'], ['right', 'Right']], S.side));
     h += `<div class="sec">Game</div>`;
     h += row('reset', 'Start over', resetArm ? 'This erases all your progress. Tap again.' : 'Erases all worlds, money and hats', `<button type="button" class="buy warn" data-act="reset">${resetArm ? 'Yes, erase' : 'Reset'}</button>`);
     h += `<p class="note">Move: drag your finger across the screen (or use WASD / arrow keys). You can carry different products at the same time. Your game saves by itself all the time.</p><p class="note">No ads, no in-app purchases and no tracking.</p>`;
@@ -5077,7 +5131,12 @@ function renderPanel() {
   b.innerHTML = h;
 }
 function openPanel(k) { SFX.click(); panelKind = k; resetArm = false; if (k === 'missions' && ws.tut >= TUT.length) refillMissions(); $('#panel').hidden = false; renderPanel(); joy.id = null; joy.x = joy.y = 0; joyEl.hidden = true; }
-function closePanel() { $('#panel').hidden = true; panelKind = null; }
+function closePanel() { $('#panel').hidden = true; panelKind = null; if (menuOpen) renderMenuStats(); }
+function renderMenuStats() {
+  const el = $('#mStats'); if (!el || !save) return;
+  const all = COLORS.length + HATS.length, got = COLORS.filter(x => save.owned['c|' + x.id]).length + HATS.filter(x => save.owned['h|' + x.id]).length;
+  el.innerHTML = `<span>${ic('globe')}<em><b>${Math.min(WORLDS.length, (save.max || 0) + 1)}/${WORLDS.length}</b><i>Worlds</i></em></span><span>${ic(lookIcon('h', 'crown'))}<em><b>${got}/${all}</b><i>Skins</i></em></span><span>${ic('quest')}<em><b>${save.missions || 0}</b><i>Missions</i></em></span>`;
+}
 $('#bMenu').addEventListener('click', () => { SFX.click(); openMenu(); });
 $('#mPlay').addEventListener('click', () => { ac(); startMusic(); closeMenu(); });
 $('#mSkins').addEventListener('click', () => openPanel('skins'));
@@ -5097,7 +5156,7 @@ $('#pBody').addEventListener('click', e => {
   else if (a === 'go') { travel(+arg); return; }
   else if (a === 'claim') { const m = ws.missions && ws.missions[+arg]; if (!m || !m.done || m.claimed) return; giveReward(m); SFX.unlock(); vibrate(30); }
   else if (a === 'collect') { closePanel(); SFX.cash(); SFX.unlock(); dispMoney = Math.max(0, ws.money - awayGain); const me = $('#money'); me.classList.remove('pop'); void me.offsetWidth; me.classList.add('pop'); return; }
-  else if (a === 'set') { const k = btn.dataset.k, v = btn.dataset.v; if (k === 'sound') { save.sound = v === '1'; if (save.sound) SFX.click(); } else if (k === 'music' || k === 'vib' || k === 'bubbles') { save.set[k] = v === '1'; if (k === 'music') { if (save.set.music) startMusic(); else stopMusic(); } if (k === 'vib') vibrate(40); } else { save.set[k] = v; if (k === 'gfx') applyGfx(); if (k === 'lang') applyLang(); } SFX.click(); }
+  else if (a === 'set') { const k = btn.dataset.k, v = btn.dataset.v; if (k === 'sound') { save.sound = v === '1'; if (save.sound) SFX.click(); } else if (['music', 'vib', 'bubbles', 'saver', 'shadows', 'shake'].includes(k)) { save.set[k] = v === '1'; if (k === 'saver' || k === 'shadows') applyGfx(); if (k === 'music') { if (save.set.music) startMusic(); else stopMusic(); } if (k === 'vib') vibrate(40); } else { save.set[k] = v; if (k === 'gfx') applyGfx(); if (k === 'lang') applyLang(); if (k === 'mvol' && musGain) musGain.gain.value = musVol(); if (k === 'joy' || k === 'side') applyControls(); } SFX.click(); }
   else if (a === 'wear') { const [kind, id] = arg.split('|'); if (kind === 'c') save.look.c = id; else save.look.h = id; SFX.click(); applyLook(); }
   else if (a === 'reset') { if (!resetArm) resetArm = true; else { wipeSave(); save = Object.assign(freshSave(), { sound: save.sound, set: save.set }); initSave(); closePanel(); loadWorld(0); writeSave(true); refreshPlayerIcon(); toast('Fresh start!', 'banana'); return; } }
   writeSave(); renderPanel();
@@ -5112,6 +5171,7 @@ function updDots() {
   const anyStaff = can('staff') || (ws.stock < STOCK_COST.length && ws.money >= stockCost()) || checkouts.some(co => !ws.cash[co.id] && ws.money >= Math.round(CASH_COST[co.id] * W.mul * diffCost()));
   const prize = ws.tut >= TUT.length && (ws.missions || []).some(m => m.done && !m.claimed);
   for (const [id, on] of [['#bUpg', (can('you') || can('shop')) && ws.tut >= TUT.length], ['#bStaff', anyStaff && ws.tut >= TUT.length], ['#bMenu', prize], ['#mMis', prize]]) { const b = $(id); let d = b.querySelector('.dot'); if (on && !d) { d = document.createElement('i'); d.className = 'dot'; b.appendChild(d); } else if (!on && d) d.remove(); }
+  const md = $('#mMis .dot'); if (md) { const n = String((ws.missions || []).filter(m => m.done && !m.claimed).length); if (md.textContent !== n) md.textContent = n; }
   if (panelKind) for (const b of document.querySelectorAll('#pBody button[data-price]')) b.disabled = ws.money < +b.dataset.price;
 }
 
@@ -5120,10 +5180,10 @@ let musT = null, musNext = 0, musStep = 0, musGain = null;
 const MUS_PROG = [[0, 4, 7], [-3, 0, 4], [5, 9, 12], [7, 11, 14]], MUS_PAT = [0, 1, 2, 1, 2, 1, 0, 2];
 function mnote(semi, t, dur, type, vol) { const a = AC, o = a.createOscillator(), g = a.createGain(); o.type = type; o.frequency.value = 261.63 * Math.pow(2, semi / 12); g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(vol, t + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, t + dur); o.connect(g); g.connect(musGain); o.start(t); o.stop(t + dur + 0.05); }
 function schedMusic() { const a = AC; if (!a || !save.set.music) return; const spb = 60 / 108 / 2; while (musNext < a.currentTime + 0.35) { const i = musStep, bar = Math.floor(i / 8) % 4, ch = MUS_PROG[bar], beat = i % 8; if (beat === 0) mnote(ch[0] - 24, musNext, spb * 7, 'triangle', 0.08); if (beat === 4) mnote(ch[2] - 24, musNext, spb * 3, 'triangle', 0.05); if (beat % 2 === 0 || (i * 7) % 5 === 0) mnote(ch[MUS_PAT[beat]] + 12, musNext, spb * 1.7, 'sine', 0.04); if (beat % 2 === 1) mnote(ch[1] + 24, musNext, 0.05, 'sine', 0.01); musNext += spb; musStep++; } }
-function startMusic() { if (musT || !save || !save.set || !save.set.music || document.hidden) return; const a = ac(); if (!a) return; if (!musGain) { musGain = a.createGain(); musGain.gain.value = 0.55; musGain.connect(a.destination); } musNext = a.currentTime + 0.15; musT = setInterval(schedMusic, 90); }
+function startMusic() { if (musT || !save || !save.set || !save.set.music || document.hidden) return; const a = ac(); if (!a) return; if (!musGain) { musGain = a.createGain(); musGain.gain.value = musVol(); musGain.connect(a.destination); } musNext = a.currentTime + 0.15; musT = setInterval(schedMusic, 90); }
 function stopMusic() { if (musT) { clearInterval(musT); musT = null; } }
-function applyGfx() { const g = save.set.gfx; RES.ceil = 1; RES.hold = 3; RES.scale = g === 'ultra' && !DESKTOP ? Math.min(1, 2 / Math.max(1, Math.min(window.devicePixelRatio || 1, 3))) : 1; sun.castShadow = g !== 'low'; const sz = g === 'ultra' ? (DESKTOP && renderer.capabilities.maxTextureSize >= 8192 ? 4096 : 2048) : g === 'high' ? 2048 : 1024; if (sun.shadow.mapSize.x !== sz) { sun.shadow.mapSize.set(sz, sz); if (sun.shadow.map) { sun.shadow.map.dispose(); sun.shadow.map = null; } } resize(); }
-function initSave() { save.set = Object.assign({ music: true, vib: true, gfx: 'ultra', zoom: 'normal', bubbles: true, lang: 'en' }, save.set || {}); applyLang(); if (!save.set.g4k) { save.set.g4k = 1; if (save.set.gfx === 'high') save.set.gfx = 'ultra'; } try { if (localStorage.getItem('winkelbaas-safe')) { localStorage.removeItem('winkelbaas-safe'); save.set.gfx = { ultra: 'high', high: 'medium' }[save.set.gfx] || 'low'; } } catch (_) { } save.owned = save.owned || { 'c|#62c9f5': 1, 'h|none': 1 }; save.look = save.look || { c: '#62c9f5', h: 'none' }; if (save.sound === undefined) save.sound = true; }
+function applyGfx() { const g = save.set.gfx; RES.ceil = 1; RES.hold = 3; RES.scale = g === 'ultra' && !DESKTOP ? Math.min(1, 2 / Math.max(1, Math.min(window.devicePixelRatio || 1, 3))) : 1; sun.castShadow = g !== 'low' && save.set.shadows !== false && !save.set.saver; const sz = g === 'ultra' ? (DESKTOP && renderer.capabilities.maxTextureSize >= 8192 ? 4096 : 2048) : g === 'high' ? 2048 : 1024; if (sun.shadow.mapSize.x !== sz) { sun.shadow.mapSize.set(sz, sz); if (sun.shadow.map) { sun.shadow.map.dispose(); sun.shadow.map = null; } } resize(); }
+function initSave() { save.set = Object.assign({ music: true, vib: true, gfx: 'ultra', zoom: 'normal', bubbles: true, lang: 'en', vol: 'mid', mvol: 'mid', saver: false, shadows: true, shake: true, joy: 'mid', side: 'right' }, save.set || {}); applyControls(); applyLang(); if (!save.set.g4k) { save.set.g4k = 1; if (save.set.gfx === 'high') save.set.gfx = 'ultra'; } try { if (localStorage.getItem('winkelbaas-safe')) { localStorage.removeItem('winkelbaas-safe'); save.set.gfx = { ultra: 'high', high: 'medium' }[save.set.gfx] || 'low'; } } catch (_) { } save.owned = save.owned || { 'c|#62c9f5': 1, 'h|none': 1 }; save.look = save.look || { c: '#62c9f5', h: 'none' }; if (save.sound === undefined) save.sound = true; }
 function lookRender(kind, id, key) { const sv = seed; if (kind === 'c') renderIconNow(key, figure(id, 'none').root, [0.35, 0.25, 1], 0.9); else if (id === 'none') renderIconNow(key, figure(save.look.c, 'none').root, [0.35, 0.25, 1], 0.9); else { const g = new THREE.Group(); addHat(g, id); renderIconNow(key, g, [0.4, 0.5, 1], 0.95); } seed = sv; }
 function lookIcon(kind, id) { const key = kind + '_' + id; if (!ICON[key]) lookRender(kind, id, key); return key; }
 function refreshPlayerIcon() { renderIcon('player', figure(save.look.c, save.look.h).root, [0.35, 0.25, 1], 0.9); $('#mSkins img').src = ICON.player.url; }
@@ -5131,7 +5191,7 @@ function applyLook() { if (player) { player.body.material = charMat(save.look.c)
 
 /* ================= main menu / pause ================= */
 let menuOpen = false, inGame = false, MT = 0;
-function openMenu() { menuOpen = true; paintPage(); $('#menu').hidden = false; $('#mPlay').textContent = inGame ? 'RESUME' : 'PLAY'; document.body.classList.add('menu-open'); joy.id = null; joy.x = joy.y = 0; joyEl.hidden = true; for (const k in keys) keys[k] = false; writeSave(); }
+function openMenu() { menuOpen = true; paintPage(); $('#menu').hidden = false; $('#mPlayT').textContent = inGame ? 'RESUME' : 'PLAY'; $('#mPlayW').textContent = W ? W.name : ''; renderMenuStats(); document.body.classList.add('menu-open'); joy.id = null; joy.x = joy.y = 0; joyEl.hidden = true; for (const k in keys) keys[k] = false; writeSave(); }
 function closeMenu() { menuOpen = false; paintPage(); $('#menu').hidden = true; document.body.classList.remove('menu-open'); if (!inGame) { inGame = true; custT = Math.min(custT, 1.2); if (ws.tut === 0) $('#dragHint').hidden = moved; updCamera(0, true); } }
 function onBack() { if (!$('#panel').hidden) { closePanel(); return; } if (menuOpen) { if (inGame) closeMenu(); else if (CapApp && CapApp.exitApp) CapApp.exitApp(); return; } openMenu(); }
 let CapApp = null; try { const C = window.Capacitor; if (C && C.isNativePlatform && C.isNativePlatform()) { CapApp = C.Plugins?.App || (C.registerPlugin ? C.registerPlugin('App') : null); CapApp?.addListener?.('backButton', onBack); } } catch (_) { CapApp = null; }
@@ -5139,8 +5199,10 @@ window.addEventListener('keydown', e => { if (e.key === 'Escape') onBack(); });
 
 /* ================= main loop ================= */
 let last = performance.now(), lastP = last, ready = false, SIM = 1;
+let saverFlip = false;
 function frame(now) {
   requestAnimationFrame(frame);
+  if (ready && save.set.saver) { saverFlip = !saverFlip; if (saverFlip) return; }
   const dt = Math.min(0.05, (now - last) / 1000); last = now;
   const pn = performance.now(), raw = pn - lastP; lastP = pn;
   if (!ready) return;
@@ -5154,6 +5216,9 @@ function frame(now) {
     updFlights(dt); updTweens(dt); updBumps(dt); updDrops(dt); updParts(dt);
   }
   updCamera(dt); updLabels(); updHud(dt);
+  FX.uT.value = MT;
+  for (const o of FX.flick) o.scale.set(1 + Math.sin(MT * 9 + o.id) * 0.04, 1 + Math.sin(MT * 13 + o.id) * 0.14, 1 + Math.cos(MT * 11 + o.id) * 0.04);
+  for (const o of FX.bob) o.position.y = Math.sin(MT * 2.4) * 0.03;
   dotT -= dt; if (dotT <= 0) { dotT = 0.5; updDots(); }
   saveT -= dt; if (saveT <= 0) { saveT = 5; writeSave(); }
   renderer.render(scene, camera);

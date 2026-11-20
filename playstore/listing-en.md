@@ -18,7 +18,7 @@ Shop Boss is a cheerful 3D shop game. Start with one banana tree and a small sta
 • Open portals to 12 worlds: Sunny Beach, Snow Village, Big City, Desert Oasis, Candy Land, Fishing Harbor, Spooky Farm, Moon Base, Jungle Camp, Volcano Island, Cloud Kingdom and Coral Reef
 • Serve golden VIP customers who pay triple
 • Catch gift boxes that fall from the sky
-• Complete missions to win 34 colors and hats, from a party hat to a golden crown
+• Complete missions to win 40 colors and hats, from a party hat to legendary skins like Rainbow and Fire Crown
 • Watch out for surprise events like rush hour and double cash
 
 Easy one-finger controls: drag anywhere on the screen to walk.
