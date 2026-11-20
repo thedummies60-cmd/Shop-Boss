@@ -21,8 +21,8 @@ On iPhone, play the web version (`Shop Boss(1).html`).
 - **Better menu:** your worlds, skins and missions at a glance, and the world name on the Play button.
 - **Skins are won, not bought:** every mission wins a new color or hat (34 to collect, including a party hat,
   chef hat, cowboy hat, top hat, viking helmet and the golden crown). They can no longer be bought with money.
-- **Welcome back:** with a cashier and a stocker hired, your staff keep selling while you are away
-  (up to 2 hours) and you collect the money when you come back.
+- **Welcome back:** your shop keeps earning while you are away (from 1 minute up to 3 hours) and you
+  collect the money when you come back; cashiers and stockers make it much more.
 - **No zooming:** pinching, double-tapping and Ctrl + scroll no longer zoom the game.
 - **New 3D models:** a real golden crown (with gems and a velvet cap) and a sneaker with a lightning bolt
   for the Fast Shoes and Staff Speed upgrades.
