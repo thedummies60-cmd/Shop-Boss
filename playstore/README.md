@@ -8,7 +8,7 @@
 | `feature-graphic-en.jpg`, `feature-graphic-nl.jpg` | Banner bovenaan de winkelpagina, 1024 × 500 |
 | `screenshots/en/`, `screenshots/nl/` | 8 schermafbeeldingen per taal, 1080 × 1920 |
 | `../PRIVACY.md` | Privacybeleid (Google vraagt een link) |
-| `Shop-Boss-1.9.aab` | Het app-bestand voor Google Play (zodra het gemaakt is, zie stap 3) |
+| `Shop-Boss-1.9.aab` | Het app-bestand voor Google Play (versie 1.9, code 23, ondertekend met je uploadsleutel) |
 
 Je hebt ook de sleutel `shop-boss-release.jks` en het wachtwoord nodig (die heb je privé gekregen). **Nooit op GitHub zetten.**
 
