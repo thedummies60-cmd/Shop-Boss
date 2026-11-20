@@ -15,6 +15,7 @@ On iPhone, play the web version (`Shop Boss(1).html`).
   progress and the prize; a red dot on the menu button shows when a prize is ready to claim.
   Missions are big (sell 50-90, serve 45-80, ...), get up to 3x harder the more you finish, include
   "serve customers in a row with nobody angry", and now and then a legendary mission appears.
+  You can finish 3 missions a day; new ones come the next day.
 - **Legendary skins:** Rainbow, Diamond, Neon, Halo, Unicorn Horn and Fire Crown can only be won with a
   legendary mission. Every skin shows its rarity: Common, Rare, Epic or Legendary (40 to collect).
 - **More settings:** effects and music volume, battery saver, shadows, screen shake, joystick size and
