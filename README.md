@@ -21,8 +21,6 @@ On iPhone, play the web version (`Shop Boss(1).html`).
 - **Better menu:** your worlds, skins and missions at a glance, and the world name on the Play button.
 - **Skins are won, not bought:** every mission wins a new color or hat (34 to collect, including a party hat,
   chef hat, cowboy hat, top hat, viking helmet and the golden crown). They can no longer be bought with money.
-- **Welcome back:** your shop keeps earning while you are away (from 1 minute up to 3 hours) and you
-  collect the money when you come back; cashiers and stockers make it much more.
 - **No zooming:** pinching, double-tapping and Ctrl + scroll no longer zoom the game.
 - **New 3D models:** a real golden crown (with gems and a velvet cap) and a sneaker with a lightning bolt
   for the Fast Shoes and Staff Speed upgrades.
@@ -43,11 +41,10 @@ progress stays, without doing anything.
 
 ## Nederlands
 **Nieuw in 1.9:** 4 nieuwe werelden (Junglekamp, Vulkaaneiland, Wolkenrijk, Koraalrif), geen groene
-balk meer bovenaan op iPhone, je kunt niet meer inzoomen, een nieuwe kroon en snelle schoen,
-"Welkom terug!" (je personeel verdient geld terwijl je weg bent), meer variatie (kleurrijke klanten,
-VIP-klanten, cadeaudozen uit de lucht en opdrachten). Met opdrachten win je nieuwe kleuren en hoeden; kopen
-met geld kan niet meer en je voortgang wordt altijd vanzelf
-bewaard. Alles voor de Play Store staat in de map `playstore/`.
+balk meer bovenaan op iPhone, je kunt niet meer inzoomen, een nieuwe kroon en snelle schoen, meer
+variatie (kleurrijke klanten, VIP-klanten, cadeaudozen uit de lucht en opdrachten). Met opdrachten win
+je nieuwe kleuren en hoeden; kopen met geld kan niet meer. Je voortgang wordt altijd vanzelf bewaard.
+Alles voor de Play Store staat in de map `playstore/`.
 
 **Installeren op Android:** verwijder eerst Shop Boss 1.8 en installeer daarna 1.9 (nieuwe
 ondertekeningssleutel). Vanaf 1.9 installeert elke nieuwe versie gewoon over de oude heen en blijft je

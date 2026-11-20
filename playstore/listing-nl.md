@@ -13,7 +13,7 @@ Shop Boss is een vrolijk 3D-winkelspel. Begin met één bananenboom en een klein
 • Breng je producten naar je schappen, koelkasten en vriezers
 • Laat machines sap, popcorn, pizza, ijsjes en nog veel meer maken
 • Help je klanten aan de kassa en pak het geld
-• Neem kassamedewerkers en vakkenvullers aan die de winkel draaiende houden, zelfs als jij weg bent
+• Neem kassamedewerkers en vakkenvullers aan die de winkel draaiende houden
 • Koop upgrades: meer dragen, sneller lopen, duurder verkopen
 • Open portalen naar 12 werelden: Zonnig Strand, Sneeuwdorp, Grote Stad, Woestijnoase, Snoepland, Vissershaven, Spookboerderij, Maanbasis, Junglekamp, Vulkaaneiland, Wolkenrijk en Koraalrif
 • Help gouden VIP-klanten die drie keer zoveel betalen

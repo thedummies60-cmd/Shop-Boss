@@ -13,7 +13,7 @@ Shop Boss is a cheerful 3D shop game. Start with one banana tree and a small sta
 • Carry products to your shelves, fridges and freezers
 • Run machines that make juice, popcorn, pizza, ice cream and much more
 • Serve customers at the register and grab the cash
-• Hire cashiers and stockers who keep the shop running, even while you are away
+• Hire cashiers and stockers who keep the shop running
 • Buy upgrades: carry more, walk faster, sell for higher prices
 • Open portals to 12 worlds: Sunny Beach, Snow Village, Big City, Desert Oasis, Candy Land, Fishing Harbor, Spooky Farm, Moon Base, Jungle Camp, Volcano Island, Cloud Kingdom and Coral Reef
 • Serve golden VIP customers who pay triple
