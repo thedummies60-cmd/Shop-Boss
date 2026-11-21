@@ -1,10 +1,15 @@
 # Shop-Boss
 A mobile game for Android. Download the APK, skip the warnings and install the app.
 
-**Newest version: 2.0** → download `Shop-Boss-2.0.apk` (the same file as `Shop-Boss.apk`).
+**Newest version: 2.1** → download `Shop-Boss-2.1.apk` (the same file as `Shop-Boss.apk`).
 On iPhone, play the web version (`Shop Boss(1).html`).
 
-## What's new in 2.0
+## What's new in 2.1
+- **Police:** every 5 minutes a police officer checks your shop. If more than 5 customers are angry you get a fine:
+  100 in Sunny Beach, 200 in Snow Village, 500 in Big City, and more in every next world (up to 500K in Coral Reef).
+  Your money never goes below 0.
+
+## What was new in 2.0
 - **Shop (Android app):** buy cash (bag, pile or treasure chest), **Double cash** (every customer pays 2×,
   in every world, forever), all colors, all hats or the **Legendary pack** with real money. Payments go through
   Google Play, so they only work in the app from the Play Store. Bought something before? **Restore purchases**
@@ -57,6 +62,9 @@ From 1.9 on, every new version is signed with the same key, so it installs over 
 progress stays, without doing anything.
 
 ## Nederlands
+**Nieuw in 2.1:** om de 5 minuten komt de politie kijken. Zijn er meer dan 5 boze klanten, dan krijg je een boete
+(100 in Zonnig Strand, 200 in Sneeuwdorp, 500 in Grote Stad, en meer in elke volgende wereld). Je geld gaat nooit onder 0.
+
 **Nieuw in 2.0:** een **Winkel** in de Android-app (geld, Dubbel geld, alle kleuren, alle hoeden en het
 Legendarisch pakket, betalen via Google Play), een nieuw menu met zes knoppen, een **dagcadeau** (7 dagen op rij,
 dag 7 is een nieuwe skin), een **baaslevel** (elk level +1% prijzen) en **combo's** (klanten op rij helpen zonder
