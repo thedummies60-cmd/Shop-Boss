@@ -6,7 +6,8 @@
 | `listing-en.md`, `listing-nl.md` | Naam, korte en lange beschrijving (Engels en Nederlands) |
 | `icon-512.png` | App-pictogram, 512 × 512 |
 | `feature-graphic-en.jpg`, `feature-graphic-nl.jpg` | Banner bovenaan de winkelpagina, 1024 × 500 |
-| `screenshots/en/`, `screenshots/nl/` | 8 schermafbeeldingen per taal, 1080 × 1920 |
+| `screenshots/en/`, `screenshots/nl/` | 19 schermafbeeldingen per taal voor telefoons, 1080 × 1920 (Google toont er max. 8: kies je favorieten) |
+| `screenshots-unfolded/en/`, `screenshots-unfolded/nl/` | 8 schermafbeeldingen per taal voor uitgevouwen telefoons en tablets, 1380 × 1656 |
 | `../PRIVACY.md` | Privacybeleid (Google vraagt een link) |
 | `Shop-Boss-2.1.aab` | Het app-bestand voor Google Play (versie 2.1, code 25, met de Winkel en de politie, ondertekend met je uploadsleutel) |
 | `Shop-Boss-1.9.aab` | De oude versie 1.9 (zonder Winkel). Gebruik liever 2.0 |
@@ -38,7 +39,8 @@ Wie wisselt, moet de app eerst verwijderen.
 
 ## 4. Winkelpagina (Grow users → Store presence → Main store listing)
 - Kopieer naam en beschrijvingen uit `listing-en.md`. Voeg via **Manage translations** ook **Nederlands** toe met `listing-nl.md`.
-- Upload `icon-512.png`, de banner (`feature-graphic-en.jpg` / `-nl.jpg`) en de schermafbeeldingen uit `screenshots/en/` en `screenshots/nl/`.
+- Upload `icon-512.png`, de banner (`feature-graphic-en.jpg` / `-nl.jpg`) en de schermafbeeldingen uit `screenshots/en/` en `screenshots/nl/` (bij **Phone**).
+  De foto's uit `screenshots-unfolded/` zet je bij **7-inch tablet** en **10-inch tablet** (daar horen ook uitgevouwen telefoons bij).
 - Categorie: **Game → Simulation**. Tags: Simulation, Casual, Management, Offline, Single player.
 - Contactgegevens: vul **je eigen e-mailadres** in (verplicht).
 
