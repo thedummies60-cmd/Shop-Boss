@@ -9,7 +9,7 @@
 | `screenshots/en/`, `screenshots/nl/` | 19 schermafbeeldingen per taal voor telefoons, 1080 × 1920 (Google toont er max. 8: kies je favorieten) |
 | `screenshots-unfolded/en/`, `screenshots-unfolded/nl/` | 8 schermafbeeldingen per taal voor uitgevouwen telefoons en tablets, 1380 × 1656 |
 | `../PRIVACY.md` | Privacybeleid (Google vraagt een link) |
-| `Shop-Boss-2.2.aab` | Het app-bestand voor Google Play (versie 2.2, code 26, met de Winkel en de politie, ondertekend met je uploadsleutel) |
+| `Shop-Boss-2.3.aab` | Het app-bestand voor Google Play (versie 2.3, code 27, met de Winkel en de politie, ondertekend met je uploadsleutel) |
 | `Shop-Boss-1.9.aab` | De oude versie 1.9 (zonder Winkel). Gebruik liever 2.0 |
 
 Je hebt ook de sleutel `shop-boss-release.jks` en het wachtwoord nodig (die heb je privé gekregen). **Nooit op GitHub zetten.**
@@ -30,7 +30,7 @@ Je hebt ook de sleutel `shop-boss-release.jks` en het wachtwoord nodig (die heb 
 
 ## 3. Het app-bestand (.aab)
 Google Play aanvaardt voor nieuwe apps alleen een **.aab**, geen .apk.
-Gebruik `Shop-Boss-2.2.aab` uit deze map.
+Gebruik `Shop-Boss-2.3.aab` uit deze map.
 
 **Ondertekenen (Play App Signing):** kies bij de eerste upload **"Door Google gegenereerde sleutel"** (dat is het makkelijkst).
 Jouw `shop-boss-release.jks` is dan je **uploadsleutel**: elke nieuwe versie moet je daarmee laten ondertekenen.
@@ -59,7 +59,7 @@ Wie wisselt, moet de app eerst verwijderen.
 
 ## 6. Gesloten test (verplicht voor nieuwe persoonlijke accounts)
 1. **Test and release → Testing → Closed testing → Create track**.
-2. **Create new release**, upload `Shop-Boss-2.2.aab`, geef de release een naam (bijv. `2.2`) en sla op.
+2. **Create new release**, upload `Shop-Boss-2.3.aab`, geef de release een naam (bijv. `2.3`) en sla op.
 3. Kies de landen (bijv. België en Nederland, of alle landen).
 4. **Testers**: maak een e-maillijst met **minstens 12 testers** (Google-accounts van vrienden en familie).
 5. **Review release → Start rollout**. Deel de testlink met je testers. Zij moeten de app installeren en **14 dagen** geïnstalleerd houden.
@@ -71,7 +71,7 @@ Het geld van de aankopen komt op die bankrekening (Google houdt 15% in).
 1. **Betaalprofiel maken:** in Play Console ga je naar **Setup → Payments profile** (of **Monetize with Play → Monetization setup**)
    en maak je een betaalprofiel (*payments profile / merchant account*). Vul naam, adres, bankrekening en belastinggegevens in.
 2. **Eerst een .aab uploaden:** producten kun je pas aanmaken nadat er een versie met de Winkel is geüpload
-   (stap 6: `Shop-Boss-2.2.aab` in de gesloten test).
+   (stap 6: `Shop-Boss-2.3.aab` in de gesloten test).
 3. **Producten aanmaken:** **Monetize with Play → Products → In-app products → Create product**.
    Maak deze 7 producten. De **Product ID** moet precies zo geschreven worden, anders vindt de game ze niet:
 
@@ -105,6 +105,6 @@ en beantwoord de vragen over je test (wie testte er, wat heb je verbeterd).
 3. Google controleert de app; dat duurt meestal een paar dagen. Daarna staat Shop Boss in de Play Store.
 
 ## 9. Updates later
-- Elke nieuwe versie moet een **hoger versienummer** (versionCode) hebben. Het bouwscript `tools/build_android.py` doet dat met `--code` (2.2 heeft code 26).
+- Elke nieuwe versie moet een **hoger versienummer** (versionCode) hebben. Het bouwscript `tools/build_android.py` doet dat met `--code` (2.3 heeft code 27).
 - Altijd ondertekenen met dezelfde `shop-boss-release.jks`.
 - Upload de nieuwe `.aab` in **Production → Create new release**.

@@ -1,10 +1,13 @@
 # Shop-Boss
 A mobile game for Android. Download the APK, skip the warnings and install the app.
 
-**Newest version: 2.2** → download `Shop-Boss-2.2.apk` (the same file as `Shop-Boss.apk`).
+**Newest version: 2.3** → download `Shop-Boss-2.3.apk` (the same file as `Shop-Boss.apk`).
 On iPhone, play the web version (`Shop Boss(1).html`).
 
-## What's new in 2.2
+## What's new in 2.3
+- Desert Oasis: palm trees and cacti in the background no longer stand inside each other or in the oasis pond.
+
+## What was new in 2.2
 - Google Play fix: portrait screen is no longer required, so tablets, Chromebooks and PCs can install the app too.
 
 ## What was new in 2.1

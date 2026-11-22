@@ -1,4 +1,4 @@
-const CACHE = 'shop-boss-v26';
+const CACHE = 'shop-boss-v27';
 const FILES = ["./","./capacitor.js","./fonts/LICENSE-OFL.txt","./fonts/baloo-2-latin-600-normal.woff2","./fonts/baloo-2-latin-700-normal.woff2","./fonts/baloo-2-latin-800-normal.woff2","./icons/icon-192.png","./icons/icon-512.png","./icons/icon-maskable-512.png","./index.html","./lib/three/LICENSE","./lib/three/build/three.module.js","./lib/three/examples/jsm/environments/RoomEnvironment.js","./lib/three/examples/jsm/geometries/RoundedBoxGeometry.js","./lib/three/examples/jsm/objects/MarchingCubes.js","./lib/three/examples/jsm/utils/BufferGeometryUtils.js","./manifest.webmanifest"];
 self.addEventListener('install', e => e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting())));
 self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
