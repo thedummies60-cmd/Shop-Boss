@@ -1,10 +1,13 @@
 # Shop-Boss
 A mobile game for Android. Download the APK, skip the warnings and install the app.
 
-**Newest version: 2.1** → download `Shop-Boss-2.1.apk` (the same file as `Shop-Boss.apk`).
+**Newest version: 2.2** → download `Shop-Boss-2.2.apk` (the same file as `Shop-Boss.apk`).
 On iPhone, play the web version (`Shop Boss(1).html`).
 
-## What's new in 2.1
+## What's new in 2.2
+- Google Play fix: portrait screen is no longer required, so tablets, Chromebooks and PCs can install the app too.
+
+## What was new in 2.1
 - **Police:** every 5 minutes a police officer checks your shop. If more than 5 customers are angry you get a fine:
   100 in Sunny Beach, 200 in Snow Village, 500 in Big City, and more in every next world (up to 500K in Coral Reef).
   Your money never goes below 0.
