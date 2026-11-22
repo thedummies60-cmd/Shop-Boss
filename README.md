@@ -1,10 +1,13 @@
 # Shop-Boss
 A mobile game for Android. Download the APK, skip the warnings and install the app.
 
-**Newest version: 2.3** → download `Shop-Boss-2.3.apk` (the same file as `Shop-Boss.apk`).
+**Newest version: 2.4** → download `Shop-Boss-2.4.apk` (the same file as `Shop-Boss.apk`).
 On iPhone, play the web version (`Shop Boss(1).html`).
 
-## What's new in 2.3
+## What's new in 2.4
+- The real-money Shop is switched off for now (no in-app purchases). The billing code stays in `app/` so it can be switched on again (`SHOP_ON` in the game, the billing library and `registerPlugin` in the Android project).
+
+## What was new in 2.3
 - Desert Oasis: palm trees and cacti in the background no longer stand inside each other or in the oasis pond.
 
 ## What was new in 2.2

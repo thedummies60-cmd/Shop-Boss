@@ -24,7 +24,7 @@ Shop Boss is een vrolijk 3D-winkelspel. Begin met één bananenboom en een klein
 
 Makkelijk te besturen met één vinger: sleep over het scherm om te lopen.
 
-Speelt offline. Geen reclame en geen tracking. Optionele aankopen in de app (geld, een geldboost en skins). Je spel wordt vanzelf bewaard.
+Speelt offline. Geen reclame en geen tracking. Geen aankopen in de app. Je spel wordt vanzelf bewaard.
 
 Beschikbaar in het Engels en het Nederlands.
 

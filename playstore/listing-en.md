@@ -24,7 +24,7 @@ Shop Boss is a cheerful 3D shop game. Start with one banana tree and a small sta
 
 Easy one-finger controls: drag anywhere on the screen to walk.
 
-Plays offline. No ads and no tracking. Optional in-app purchases (cash, a cash boost and skins). Your game saves by itself.
+Plays offline. No ads and no tracking. No in-app purchases. Your game saves by itself.
 
 Available in English and Dutch.
 
