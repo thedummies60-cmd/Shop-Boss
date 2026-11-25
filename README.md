@@ -1,10 +1,18 @@
 # Shop-Boss
 A mobile game for Android. Download the APK, skip the warnings and install the app.
 
-**Newest version: 2.5** → download `Shop-Boss-2.5.apk` (the same file as `Shop-Boss.apk`).
+**Newest version: 2.6** → download `Shop-Boss-2.6.apk` (the same file as `Shop-Boss.apk`).
 On iPhone, play the web version (`Shop Boss(1).html`).
 
-## What's new in 2.5
+## What's new in 2.6
+- **The map changes with the season** (every year, automatically): snow, falling snowflakes, snowmen and Christmas
+  trees at Christmas; a dark purple evening, pumpkins, gravestones and spooky trees at Halloween; spring green, flowers
+  and Easter eggs at Easter. The shop floor, ground, sky and light change too (see `playstore/seasons-preview.png`).
+- **Many more costumes:** Halloween (witch, pumpkin, ghost, devil horns, cat ears, skull), Christmas (Santa hat, elf hat,
+  reindeer antlers, snow hat) and Easter (bunny ears, chick, flower crown, egg shell), plus seasonal clothes colours.
+- The seasonal hat goal starts again every year.
+
+## What was new in 2.5
 - **Thief:** every 2 to 3 minutes a thief sneaks in and steals from a shelf. Run to him before he gets out:
   the police gives you a reward. Too late, and the stolen items are gone.
 - **Seasons, automatic by date:** Halloween (15 Oct - 2 Nov), Christmas (24 Nov - 6 Jan) and Easter (10 days before
@@ -78,6 +86,9 @@ From 1.9 on, every new version is signed with the same key, so it installs over 
 progress stays, without doing anything.
 
 ## Nederlands
+**Nieuw in 2.6:** de kaart verandert elk jaar vanzelf mee met de feestdagen (sneeuw met Kerst, een donkere
+Halloween-avond, lente met Pasen) en veel meer verkleedkleren voor de klanten.
+
 **Nieuw in 2.5:** een **dief** die spullen steelt (ren naar hem toe en de politie geeft je een beloning) en
 **seizoenen** die vanzelf beginnen: Halloween, Kerst en Pasen, met verklede klanten, versiering en een seizoenshoed om te winnen.
 
