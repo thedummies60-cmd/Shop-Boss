@@ -1,10 +1,15 @@
 # Shop-Boss
 A mobile game for Android. Download the APK, skip the warnings and install the app.
 
-**Newest version: 3.0** → download `Shop-Boss-3.0.apk` (the same file as `Shop-Boss.apk`).
+**Newest version: 3.1** → download `Shop-Boss-3.1.apk` (the same file as `Shop-Boss.apk`).
 On iPhone, play the web version (`Shop Boss(1).html`).
 
-## What's new in 3.0
+## What's new in 3.1
+- **Better pets:** shiny eyes, paws, a collar with a tag (dog), stripes and whiskers (cat), a carrot (bunny),
+  a beak, tail feathers and claws (parrot), a belly and spikes (dragon). Pets are also bigger in the game.
+- The sticker album and its 12 album colors are removed.
+
+## What was new in 3.0
 - **Studio intro:** when the game starts, a "made by Nightdust Studios" screen shows for a few seconds
   (a golden moon with stars and glowing night dust). Tap it to skip.
 
@@ -15,7 +20,6 @@ On iPhone, play the web version (`Shop Boss(1).html`).
   Parrot (+20% customers, level 12) and Dragon (digs up gold, level 16).
 - **Weather:** sunny, rain (fewer customers, but +20% and umbrellas) and heatwave (fridge drinks +30%).
 - **Night shop:** every 7 minutes of play it gets dark for 2 minutes; night customers (vampires, owls, ghosts) pay +25%.
-- **Album** (menu → Album): sell 100 of a product to get its sticker; a full world album wins a new color (12 to collect).
 
 ## What was new in 2.8
 - **Every kind of machine has its own front:** kitchen machines (ovens, griddles, fryers, sushi bar) have an oven door
@@ -113,6 +117,8 @@ progress stays, without doing anything.
 
 ## Nederlands
 **Nieuw in 2.8:** elke soort machine heeft een eigen voorkant (ovendeur met vuur, rond kijkvenster, tapkraan met beker).
+
+**Nieuw in 3.1:** mooiere en grotere huisdieren; het album en de albumkleuren zijn weg.
 
 **Nieuw in 3.0:** bij het opstarten zie je eerst "made by Nightdust Studios" (tik om over te slaan).
 
