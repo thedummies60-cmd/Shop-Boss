@@ -1,10 +1,15 @@
 # Shop-Boss
 A mobile game for Android. Download the APK, skip the warnings and install the app.
 
-**Newest version: 3.2** → download `Shop-Boss-3.2.apk` (the same file as `Shop-Boss.apk`).
+**Newest version: 3.3** → download `Shop-Boss-3.3.apk` (the same file as `Shop-Boss.apk`).
 On iPhone, play the web version (`Shop Boss(1).html`).
 
-## What's new in 3.2
+## What's new in 3.3
+- **Smoother fruit:** rounder apple, orange, tomato, mango and strawberry, a lemon with a leaf, shiny grapes and blueberries.
+- **Map:** fuller bushes with light tops and little flowers, shaded pine trees, soft grass and sand patches and wild
+  flowers around the shop, and shop floor tiles with a soft shine, edge and speckles.
+
+## What was new in 3.2
 - **Smooth pets:** pets are now made the same way as the shoppers (one soft, smooth shape) and they are animated:
   legs walk, tails wag, heads look around, wings flap, the bunny hops and pets dig with their front paws.
 - **Loading screen is back:** after the Nightdust Studios intro you see the loading screen again.
@@ -124,6 +129,9 @@ progress stays, without doing anything.
 
 ## Nederlands
 **Nieuw in 2.8:** elke soort machine heeft een eigen voorkant (ovendeur met vuur, rond kijkvenster, tapkraan met beker).
+
+**Nieuw in 3.3:** gladder fruit, vollere struiken met bloemetjes, bloemen en grasvlakken rond de winkel en vloertegels
+met meer diepte.
 
 **Nieuw in 3.2:** gladde huisdieren met animaties (lopen, kwispelen, vleugels, graven), het laadscherm is terug en het
 Nightdust-intro duurt langer.
