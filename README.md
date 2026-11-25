@@ -1,10 +1,17 @@
 # Shop-Boss
 A mobile game for Android. Download the APK, skip the warnings and install the app.
 
-**Newest version: 2.4** → download `Shop-Boss-2.4.apk` (the same file as `Shop-Boss.apk`).
+**Newest version: 2.5** → download `Shop-Boss-2.5.apk` (the same file as `Shop-Boss.apk`).
 On iPhone, play the web version (`Shop Boss(1).html`).
 
-## What's new in 2.4
+## What's new in 2.5
+- **Thief:** every 2 to 3 minutes a thief sneaks in and steals from a shelf. Run to him before he gets out:
+  the police gives you a reward. Too late, and the stolen items are gone.
+- **Seasons, automatic by date:** Halloween (15 Oct - 2 Nov), Christmas (24 Nov - 6 Jan) and Easter (10 days before
+  to 3 days after Easter). Customers dress up, the shop is decorated (pumpkins, Christmas trees, Easter eggs) and you
+  can win a seasonal hat by serving 60 customers: Pumpkin Hat, Santa Hat or Bunny Ears.
+
+## What was new in 2.4
 - The real-money Shop is switched off for now (no in-app purchases). The billing code stays in `app/` so it can be switched on again (`SHOP_ON` in the game, the billing library and `registerPlugin` in the Android project).
 
 ## What was new in 2.3
@@ -71,6 +78,9 @@ From 1.9 on, every new version is signed with the same key, so it installs over 
 progress stays, without doing anything.
 
 ## Nederlands
+**Nieuw in 2.5:** een **dief** die spullen steelt (ren naar hem toe en de politie geeft je een beloning) en
+**seizoenen** die vanzelf beginnen: Halloween, Kerst en Pasen, met verklede klanten, versiering en een seizoenshoed om te winnen.
+
 **Nieuw in 2.1:** om de 5 minuten komt de politie kijken. Zijn er meer dan 5 boze klanten, dan krijg je een boete
 (100 in Zonnig Strand, 200 in Sneeuwdorp, 500 in Grote Stad, en meer in elke volgende wereld). Je geld gaat nooit onder 0.
 
