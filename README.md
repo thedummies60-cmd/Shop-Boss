@@ -1,10 +1,19 @@
 # Shop-Boss
 A mobile game for Android. Download the APK, skip the warnings and install the app.
 
-**Newest version: 2.8** → download `Shop-Boss-2.8.apk` (the same file as `Shop-Boss.apk`).
+**Newest version: 2.9** → download `Shop-Boss-2.9.apk` (the same file as `Shop-Boss.apk`).
 On iPhone, play the web version (`Shop Boss(1).html`).
 
-## What's new in 2.8
+## What's new in 2.9
+- **Machines** look like before 2.7 again.
+- **Pets** (menu → Pets), unlocked with your boss level, each with its own skill: Dog (digs up cash, level 2),
+  Cat (catches thieves, level 4), Bunny (digs up gift boxes, level 6), Pig (finds truffles: big cash, level 9),
+  Parrot (+20% customers, level 12) and Dragon (digs up gold, level 16).
+- **Weather:** sunny, rain (fewer customers, but +20% and umbrellas) and heatwave (fridge drinks +30%).
+- **Night shop:** every 7 minutes of play it gets dark for 2 minutes; night customers (vampires, owls, ghosts) pay +25%.
+- **Album** (menu → Album): sell 100 of a product to get its sticker; a full world album wins a new color (12 to collect).
+
+## What was new in 2.8
 - **Every kind of machine has its own front:** kitchen machines (ovens, griddles, fryers, sushi bar) have an oven door
   with a glowing fire window, factory machines (vats, cauldrons, reactor) a round porthole with glowing liquid, a gauge
   and pipes, and drink machines a tap with a cup (see `playstore/models/machines-voor-na.png`).
@@ -100,6 +109,9 @@ progress stays, without doing anything.
 
 ## Nederlands
 **Nieuw in 2.8:** elke soort machine heeft een eigen voorkant (ovendeur met vuur, rond kijkvenster, tapkraan met beker).
+
+**Nieuw in 2.9:** huisdieren (hond, kat, konijn, varken, papegaai, draak, elk met een eigen kracht), weer (regen,
+hittegolf), een nachtwinkel en een stickeralbum. De machines zien er weer uit zoals vroeger.
 
 **Nieuw in 2.7:** betere 3D-modellen voor pizza, cacao, milkshake, omelet, rijst, parel en aardappel, mooiere
 machines en gras en steentjes rond de winkel. De milkshake toonde het verkeerde pictogram; dat is opgelost.
