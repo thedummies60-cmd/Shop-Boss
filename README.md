@@ -1,10 +1,15 @@
 # Shop-Boss
 A mobile game for Android. Download the APK, skip the warnings and install the app.
 
-**Newest version: 3.4** → download `Shop-Boss-3.4.apk` (the same file as `Shop-Boss.apk`).
+**Newest version: 3.5** → download `Shop-Boss-3.5.apk` (the same file as `Shop-Boss.apk`).
 On iPhone, play the web version (`Shop Boss(1).html`).
 
-## What's new in 3.4
+## What's new in 3.5
+- **Trees and plants:** fuller fruit trees with a soft light-to-dark leaf colour, bark, roots, a ring of stones and
+  grass at the foot; bushes (tomato, chili, coffee and the bushes outside) get the same soft shading; vegetable beds
+  have furrows in the soil and a wooden border; melon plants have little yellow flowers.
+
+## What was new in 3.4
 - **Shelves, stands and fridges:** price tags on every shelf, a coloured band and glowing light strips in the fridges,
   a chalkboard and a wooden crate at the fruit stands, feet under the fridges.
 - **Sound:** richer coin and cash sounds with a little echo, a bigger "bought!" fanfare and a happy sound when a customer pays.
@@ -138,6 +143,9 @@ progress stays, without doing anything.
 
 ## Nederlands
 **Nieuw in 2.8:** elke soort machine heeft een eigen voorkant (ovendeur met vuur, rond kijkvenster, tapkraan met beker).
+
+**Nieuw in 3.5:** mooiere bomen en planten: vollere kruinen met zachte kleuren, schors, wortels, steentjes en gras,
+en moestuinbedden met voren en een houten rand.
 
 **Nieuw in 3.4:** prijskaartjes en lichtjes bij de schappen en koelkasten, een krijtbord bij de kraampjes, betere
 geluiden, eigen muziek per wereld met trommels, en muntjes die naar je geld vliegen.
