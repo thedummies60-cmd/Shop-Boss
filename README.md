@@ -1,10 +1,18 @@
 # Shop-Boss
 A mobile game for Android. Download the APK, skip the warnings and install the app.
 
-**Newest version: 3.5** → download `Shop-Boss-3.5.apk` (the same file as `Shop-Boss.apk`).
+**Newest version: 3.6** → download `Shop-Boss-3.6.apk` (the same file as `Shop-Boss.apk`).
 On iPhone, play the web version (`Shop Boss(1).html`).
 
-## What's new in 3.5
+## What's new in 3.6
+- **You keep everything when you update:** tested by opening saves from version 1.9 and 2.9 in 3.6 – worlds, money,
+  bought stations, upgrades, missions, level, pet, colors and hats all stay. (Only the removed album colors fall back
+  to the normal blue color.)
+- **Checked for bugs:** all 12 worlds, every menu, travelling, the thief (also caught by the cat), the police, the
+  daily gift, weather and night, with sound and music on – no errors.
+- Catching a thief now always pays a decent reward.
+
+## What was new in 3.5
 - **Trees and plants:** fuller fruit trees with a soft light-to-dark leaf colour, bark, roots, a ring of stones and
   grass at the foot; bushes (tomato, chili, coffee and the bushes outside) get the same soft shading; vegetable beds
   have furrows in the soil and a wooden border; melon plants have little yellow flowers.
@@ -143,6 +151,9 @@ progress stays, without doing anything.
 
 ## Nederlands
 **Nieuw in 2.8:** elke soort machine heeft een eigen voorkant (ovendeur met vuur, rond kijkvenster, tapkraan met beker).
+
+**Nieuw in 3.6:** je houdt al je voortgang, skins en hoeden als je update (getest met opslag van 1.9 en 2.9), alles is
+nagekeken op fouten, en een gevangen dief geeft altijd een goede beloning.
 
 **Nieuw in 3.5:** mooiere bomen en planten: vollere kruinen met zachte kleuren, schors, wortels, steentjes en gras,
 en moestuinbedden met voren en een houten rand.
