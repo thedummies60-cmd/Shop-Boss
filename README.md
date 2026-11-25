@@ -1,10 +1,19 @@
 # Shop-Boss
 A mobile game for Android. Download the APK, skip the warnings and install the app.
 
-**Newest version: 3.3** → download `Shop-Boss-3.3.apk` (the same file as `Shop-Boss.apk`).
+**Newest version: 3.4** → download `Shop-Boss-3.4.apk` (the same file as `Shop-Boss.apk`).
 On iPhone, play the web version (`Shop Boss(1).html`).
 
-## What's new in 3.3
+## What's new in 3.4
+- **Shelves, stands and fridges:** price tags on every shelf, a coloured band and glowing light strips in the fridges,
+  a chalkboard and a wooden crate at the fruit stands, feet under the fridges.
+- **Sound:** richer coin and cash sounds with a little echo, a bigger "bought!" fanfare and a happy sound when a customer pays.
+- **Music:** every world has its own tune (own speed, key and instrument, some worlds sound mysterious) with soft drums;
+  at Christmas the hi-hat sounds like sleigh bells, and at night the music gets calm.
+- **Effects:** coins fly from you to your money when you pick up cash, and buying something shakes the screen a little,
+  makes a dust ring and lets the new station bounce into place.
+
+## What was new in 3.3
 - **Smoother fruit:** rounder apple, orange, tomato, mango and strawberry, a lemon with a leaf, shiny grapes and blueberries.
 - **Map:** fuller bushes with light tops and little flowers, shaded pine trees, soft grass and sand patches and wild
   flowers around the shop, and shop floor tiles with a soft shine, edge and speckles.
@@ -129,6 +138,9 @@ progress stays, without doing anything.
 
 ## Nederlands
 **Nieuw in 2.8:** elke soort machine heeft een eigen voorkant (ovendeur met vuur, rond kijkvenster, tapkraan met beker).
+
+**Nieuw in 3.4:** prijskaartjes en lichtjes bij de schappen en koelkasten, een krijtbord bij de kraampjes, betere
+geluiden, eigen muziek per wereld met trommels, en muntjes die naar je geld vliegen.
 
 **Nieuw in 3.3:** gladder fruit, vollere struiken met bloemetjes, bloemen en grasvlakken rond de winkel en vloertegels
 met meer diepte.
