@@ -1,10 +1,17 @@
 # Shop-Boss
 A mobile game for Android. Download the APK, skip the warnings and install the app.
 
-**Newest version: 3.1** → download `Shop-Boss-3.1.apk` (the same file as `Shop-Boss.apk`).
+**Newest version: 3.2** → download `Shop-Boss-3.2.apk` (the same file as `Shop-Boss.apk`).
 On iPhone, play the web version (`Shop Boss(1).html`).
 
-## What's new in 3.1
+## What's new in 3.2
+- **Smooth pets:** pets are now made the same way as the shoppers (one soft, smooth shape) and they are animated:
+  legs walk, tails wag, heads look around, wings flap, the bunny hops and pets dig with their front paws.
+- **Loading screen is back:** after the Nightdust Studios intro you see the loading screen again.
+- **The intro lasts longer** (about 4 seconds; tap to skip).
+- **Checked for bugs:** every world, every menu panel and travelling between all 12 worlds, with no errors.
+
+## What was new in 3.1
 - **Better pets:** shiny eyes, paws, a collar with a tag (dog), stripes and whiskers (cat), a carrot (bunny),
   a beak, tail feathers and claws (parrot), a belly and spikes (dragon). Pets are also bigger in the game.
 - The sticker album and its 12 album colors are removed.
@@ -117,6 +124,9 @@ progress stays, without doing anything.
 
 ## Nederlands
 **Nieuw in 2.8:** elke soort machine heeft een eigen voorkant (ovendeur met vuur, rond kijkvenster, tapkraan met beker).
+
+**Nieuw in 3.2:** gladde huisdieren met animaties (lopen, kwispelen, vleugels, graven), het laadscherm is terug en het
+Nightdust-intro duurt langer.
 
 **Nieuw in 3.1:** mooiere en grotere huisdieren; het album en de albumkleuren zijn weg.
 
