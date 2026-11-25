@@ -1,10 +1,18 @@
 # Shop-Boss
 A mobile game for Android. Download the APK, skip the warnings and install the app.
 
-**Newest version: 2.6** → download `Shop-Boss-2.6.apk` (the same file as `Shop-Boss.apk`).
+**Newest version: 2.7** → download `Shop-Boss-2.7.apk` (the same file as `Shop-Boss.apk`).
 On iPhone, play the web version (`Shop Boss(1).html`).
 
-## What's new in 2.6
+## What's new in 2.7
+- **Better 3D models:** a real pizza (pepperoni, cheese, basil, olives), an open cocoa pod with beans, a milkshake glass
+  with cream and a cherry, an omelette with ketchup and herbs, a rice bowl with chopsticks, an oyster shell with a pearl
+  and a better potato (see `playstore/models/`).
+- **Machines:** bigger, easier to recognise tops, a yellow-black warning stripe, buttons, a lever, feet and a green lamp.
+- **Map:** grass tufts and pebbles around every shop.
+- **Bug fix:** the Milkshake product showed the "screen shake" settings icon.
+
+## What was new in 2.6
 - **The map changes with the season** (every year, automatically): snow, falling snowflakes, snowmen and Christmas
   trees at Christmas; a dark purple evening, pumpkins, gravestones and spooky trees at Halloween; spring green, flowers
   and Easter eggs at Easter. The shop floor, ground, sky and light change too (see `playstore/seasons-preview.png`).
@@ -86,6 +94,9 @@ From 1.9 on, every new version is signed with the same key, so it installs over 
 progress stays, without doing anything.
 
 ## Nederlands
+**Nieuw in 2.7:** betere 3D-modellen voor pizza, cacao, milkshake, omelet, rijst, parel en aardappel, mooiere
+machines en gras en steentjes rond de winkel. De milkshake toonde het verkeerde pictogram; dat is opgelost.
+
 **Nieuw in 2.6:** de kaart verandert elk jaar vanzelf mee met de feestdagen (sneeuw met Kerst, een donkere
 Halloween-avond, lente met Pasen) en veel meer verkleedkleren voor de klanten.
 
