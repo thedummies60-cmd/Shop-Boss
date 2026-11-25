@@ -1,10 +1,15 @@
 # Shop-Boss
 A mobile game for Android. Download the APK, skip the warnings and install the app.
 
-**Newest version: 2.7** → download `Shop-Boss-2.7.apk` (the same file as `Shop-Boss.apk`).
+**Newest version: 2.8** → download `Shop-Boss-2.8.apk` (the same file as `Shop-Boss.apk`).
 On iPhone, play the web version (`Shop Boss(1).html`).
 
-## What's new in 2.7
+## What's new in 2.8
+- **Every kind of machine has its own front:** kitchen machines (ovens, griddles, fryers, sushi bar) have an oven door
+  with a glowing fire window, factory machines (vats, cauldrons, reactor) a round porthole with glowing liquid, a gauge
+  and pipes, and drink machines a tap with a cup (see `playstore/models/machines-voor-na.png`).
+
+## What was new in 2.7
 - **Better 3D models:** a real pizza (pepperoni, cheese, basil, olives), an open cocoa pod with beans, a milkshake glass
   with cream and a cherry, an omelette with ketchup and herbs, a rice bowl with chopsticks, an oyster shell with a pearl
   and a better potato (see `playstore/models/`).
@@ -94,6 +99,8 @@ From 1.9 on, every new version is signed with the same key, so it installs over 
 progress stays, without doing anything.
 
 ## Nederlands
+**Nieuw in 2.8:** elke soort machine heeft een eigen voorkant (ovendeur met vuur, rond kijkvenster, tapkraan met beker).
+
 **Nieuw in 2.7:** betere 3D-modellen voor pizza, cacao, milkshake, omelet, rijst, parel en aardappel, mooiere
 machines en gras en steentjes rond de winkel. De milkshake toonde het verkeerde pictogram; dat is opgelost.
 
