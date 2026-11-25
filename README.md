@@ -1,10 +1,14 @@
 # Shop-Boss
 A mobile game for Android. Download the APK, skip the warnings and install the app.
 
-**Newest version: 2.9** → download `Shop-Boss-2.9.apk` (the same file as `Shop-Boss.apk`).
+**Newest version: 3.0** → download `Shop-Boss-3.0.apk` (the same file as `Shop-Boss.apk`).
 On iPhone, play the web version (`Shop Boss(1).html`).
 
-## What's new in 2.9
+## What's new in 3.0
+- **Studio intro:** when the game starts, a "made by Nightdust Studios" screen shows for a few seconds
+  (a golden moon with stars and glowing night dust). Tap it to skip.
+
+## What was new in 2.9
 - **Machines** look like before 2.7 again.
 - **Pets** (menu → Pets), unlocked with your boss level, each with its own skill: Dog (digs up cash, level 2),
   Cat (catches thieves, level 4), Bunny (digs up gift boxes, level 6), Pig (finds truffles: big cash, level 9),
@@ -109,6 +113,8 @@ progress stays, without doing anything.
 
 ## Nederlands
 **Nieuw in 2.8:** elke soort machine heeft een eigen voorkant (ovendeur met vuur, rond kijkvenster, tapkraan met beker).
+
+**Nieuw in 3.0:** bij het opstarten zie je eerst "made by Nightdust Studios" (tik om over te slaan).
 
 **Nieuw in 2.9:** huisdieren (hond, kat, konijn, varken, papegaai, draak, elk met een eigen kracht), weer (regen,
 hittegolf), een nachtwinkel en een stickeralbum. De machines zien er weer uit zoals vroeger.
